@@ -1,0 +1,141 @@
+    <Select.Root
+      value={value}
+      onValueChange={handleThemeToggle}
+      required={false}
+    >
+      <Select.Trigger
+        aria-label="Escolher tema"
+        tabIndex={0}
+        title="Escolher tema"
+        className="flex items-center justify-center rounded-md px-4 gap-2 py-2 leading-none"
+      >
+        {options.map((option) => (
+          <>
+            {value === option.text ? (
+              <div className="flex items-center gap-2">
+                <Select.Value>{option.icon}</Select.Value>
+                <Select.Value aria-label={value} className="text-base">
+                  {value}
+                </Select.Value>
+              </div>
+            ) : null}
+          </>
+        ))}
+        <Select.Icon>
+          <ChevronDown size={14} />
+        </Select.Icon>
+      </Select.Trigger>
+
+      <Select.Portal>
+        <Select.Content
+          position="popper"
+          align="center"
+          className="border z-[100] rounded-md bg-neutral-100 dark:bg-neutral-900"
+        >
+          <Select.Viewport>
+            <Select.Group className="text-base my-3">
+              {options?.map((option, i) => (
+                <Select.Item
+                  key={i}
+                  value={option.text}
+                  className="cursor-pointer mx-3 p-2 gap-2 rounded-md flex items-center"
+                >
+                  <Select.ItemText>{option.icon}</Select.ItemText>
+                  <Select.ItemText>{option.text}</Select.ItemText>
+                </Select.Item>
+              ))}
+            </Select.Group>
+          </Select.Viewport>
+        </Select.Content>
+      </Select.Portal>
+    </Select.Root>
+
+
+
+
+
+
+
+
+
+aaaaaaaaaaaa
+
+
+
+
+        <div>
+      <Menu
+        as="div"
+        className="relative inline-block text-left text-base font-normal"
+      >
+        <div>
+          <Menu.Button className="flex items-center justify-center rounded-md px-4 py-2 leading-none gap-2">
+            {options.map((option, i) => (
+              <div key={i} className="flex items-center gap-2">
+                {currentTheme === option.text && (
+                  <>
+                    <span>{option.icon}</span>
+                    <span aria-label={currentTheme} className="text-base">
+                      {currentTheme}
+                    </span>
+                  </>
+                )}
+              </div>
+            ))}
+            <ChevronDown aria-hidden="true" />
+          </Menu.Button>
+        </div>
+        <Transition
+          as={Fragment}
+          enter="transition ease-out duration-100"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition ease-in duration-75"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95"
+        >
+          <Menu.Items className="absolute mt-2 origin-top-right rounded-md cursor-pointer mx-3 p-2 gap-2 flex flex-col bg-neutral-100 dark:bg-neutral-900 border">
+            {options.map((option, i) => (
+              <Menu.Item key={i} as="div">
+                <div
+                  className={`cursor-pointer px-6 py-2 gap-2 rounded-md flex items-center`}
+                  onClick={() =>
+                    handleThemeToggle(option.text as 'Dark' | 'Light')
+                  }
+                >
+                  {option.icon}
+                  {option.text}
+                </div>
+              </Menu.Item>
+            ))}
+          </Menu.Items>
+        </Transition>
+      </Menu>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<NavItem href="/" title="Inicio" label="Inicio" />
+        <NavItem href="/about" title="Sobre" label="Sobre" />
+        <NavItem href="/curriculum" title="Curriculo" label="Curriculo" />
+
+
+    <Link
+      tabIndex={0}
+      href={href}
+      title={title}
+      className="px-4 py-2 mx-0.5 font-normal text-base cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md transition focus:bg-neutral-200 dark:focus:bg-neutral-800"
+    >
+      {label}
+    </Link>
