@@ -19,11 +19,7 @@ const Providers = ({ children }: ProvidersProps) => {
   }
 
   return (
-    <ThemeProvider
-      defaultTheme="light"
-      disableTransitionOnChange={true}
-      attribute="class"
-    >
+    <ThemeProvider defaultTheme='system' enableSystem={true} attribute="class">
       {children}
     </ThemeProvider>
   )

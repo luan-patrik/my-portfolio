@@ -7,6 +7,7 @@ type NavItemProps = {
   href: string
   title: string
   label: string
+  rounded?: boolean
   onCloseMenu?: () => void
 }
 
@@ -29,14 +30,22 @@ type SiteInProductionProps = {
   children: ReactNode
 }
 
-export const NavItem = ({ href, title, label, onCloseMenu }: NavItemProps) => {
+export const NavItem = ({
+  href,
+  title,
+  label,
+  onCloseMenu,
+  rounded,
+}: NavItemProps) => {
   return (
     <Link
       tabIndex={0}
       href={href}
       title={title}
       onClick={onCloseMenu}
-      className="px-4 py-2 my-0.5 sm:my-0 sm:mx-0.5 font-normal text-base cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md transition focus:bg-neutral-200 dark:focus:bg-neutral-800"
+      className={`px-4 py-2 my-0.5 sm:my-0 sm:mx-0.5 font-normal text-base cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-800 ${
+        rounded ? 'rounded-md' : ''
+      } transition focus:bg-neutral-200 dark:focus:bg-neutral-800`}
     >
       {label}
     </Link>
