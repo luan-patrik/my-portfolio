@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Luan DEV | Home",
+      "description": "Front-end developer portfolio home page"
+    },
+    "about": {
+      "title": "Luan DEV | About",
+      "description": "About Luan Patrik"
+    },
+    "curriculum": {
+      "title": "Luan DEV | Curriculum",
+      "description": "Luan Patrik curriculum"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "curriculum": "Curriculum"
+  },
+  "locales": {
+    "en": "English",
+    "pt": "Portuguese"
+  },
+  "themes": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "page": {
+    "home": {
+      "presentation": "Oi, sou Luan Patrik 👋"
+    },
+    "about": {
+      "description": "I would like to introduce me. My name is Luan Patrik, I'm 18 years old and I've been studying web development for about 2 years. I am a motivated young man who is looking for his first professional opportunity. I have a determined spirit and a desire to learn. Although I am still at the beginning of my career, I have a solid knowledge base acquired during my studies in <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong> and <strong>APIs</strong>. I have the ability to work in a team and a positive attitude. I am ready to face challenges that arise and adapt quickly to new situations.",
+
+      "author": "Sincerely, Luan Patrik"
+    }
+  }
+}
