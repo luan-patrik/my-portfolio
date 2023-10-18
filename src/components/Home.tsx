@@ -19,10 +19,7 @@ const Home = async ({ lang }: { lang: Locale }) => {
                 <p>DEVELOPER</p>
               </h2>
               <p className="lg:3/4 max-w-2xl text-base font-normal leading-6 md:text-xl">
-                Sou um programador júnior com 2 anos de experiência apaixonado
-                por desenvolvimento web. Durante minha jornada, tive a
-                oportunidade de criar projetos desafiadores que me permitiram
-                aprimorar minhas habilidades e conhecimento.
+                {page['home'].description}
               </p>
             </div>
           </div>

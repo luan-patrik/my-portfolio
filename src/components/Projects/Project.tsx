@@ -1,14 +1,15 @@
-import { ReactNode } from 'react'
-import Image, { StaticImageData } from 'next/image'
 import { ExternalLink, Github } from 'lucide-react'
-import { LinkComponent } from './ui/link'
+import Image from 'next/image'
+import { ReactNode } from 'react'
+import { LinkComponent } from '../ui/link'
 
 interface RepositoryProps {
   title: string
   description: ReactNode
-  img: StaticImageData
+  img: string
   website: string
   repository: string
+  dictionary: { website: string; repository: string }
 }
 
 const Project = ({
@@ -17,6 +18,7 @@ const Project = ({
   website,
   repository,
   description,
+  dictionary,
 }: RepositoryProps) => {
   return (
     <div className="group mb-3 last:mb-0 sm:mb-8">
@@ -33,7 +35,7 @@ const Project = ({
               target="_blank"
               className="flex items-center gap-2"
             >
-              Site <ExternalLink size={14} />
+              {dictionary.website} <ExternalLink size={14} />
             </LinkComponent>
 
             <LinkComponent
@@ -42,7 +44,7 @@ const Project = ({
               target="_blank"
               className="flex items-center gap-2"
             >
-              Repositório <Github size={14} />
+              {dictionary.repository} <Github size={14} />
             </LinkComponent>
           </div>
         </div>

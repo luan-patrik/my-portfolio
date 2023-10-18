@@ -7,6 +7,7 @@ import { buttonVariants } from '../ui/button'
 import { cn } from '@/lib/utils'
 import { LinkComponent } from '../ui/link'
 import { Locale } from '@/i18n.config'
+import { NavigationLinks } from './NavigationLinks'
 
 interface AnimateNavMobileProps {
   children: ReactNode
@@ -17,9 +18,11 @@ const AnimateNavMobile = ({
   lang,
 }: {
   dictionary: {
+    openMenuMobile: string
+    closeMenuMobile: string
     home: string
     about: string
-    curriculum: string
+    projects: string
   }
   lang: Locale
 }) => {
@@ -30,15 +33,27 @@ const AnimateNavMobile = ({
       <motion.button
         onClick={() => toggleMobileNav()}
         animate={mobileNav ? 'open' : 'closed'}
+        aria-expanded={mobileNav}
+        title={
+          mobileNav
+            ? dictionary['closeMenuMobile']
+            : dictionary['openMenuMobile']
+        }
         className={cn(
           buttonVariants({ size: 'icon', variant: 'outline' }),
           'relative z-50 shadow-md shadow-foreground/10',
         )}
       >
         {mobileNav ? (
-          <X className="h-[1.2rem] w-[1.2rem] scale-100" />
+          <>
+            <X className="h-[1.2rem] w-[1.2rem] scale-100" />
+            <span className="sr-only">{dictionary['closeMenuMobile']}</span>
+          </>
         ) : (
-          <Menu className="h-[1.2rem] w-[1.2rem] scale-100" />
+          <>
+            <Menu className="h-[1.2rem] w-[1.2rem] scale-100" />
+            <span className="sr-only">{dictionary['openMenuMobile']}</span>
+          </>
         )}
       </motion.button>
       <AnimatePresence>
@@ -86,45 +101,11 @@ const AnimateNavMobile = ({
                 className="container mt-14"
               >
                 <ul className="flex flex-col space-y-2 sm:hidden">
-                  <li>
-                    <LinkComponent
-                      className={cn(
-                        buttonVariants({ variant: 'outline', size: 'default' }),
-                        'w-full shadow-md shadow-foreground/10',
-                      )}
-                      onClick={() => toggleMobileNav(0)}
-                      href={`/${lang}`}
-                      title={dictionary.home}
-                    >
-                      {dictionary.home}
-                    </LinkComponent>
-                  </li>
-                  <li>
-                    <LinkComponent
-                      className={cn(
-                        buttonVariants({ variant: 'outline', size: 'default' }),
-                        'w-full shadow-md shadow-foreground/10',
-                      )}
-                      onClick={() => toggleMobileNav(0)}
-                      href={`/${lang}/about`}
-                      title={dictionary.about}
-                    >
-                      {dictionary.about}
-                    </LinkComponent>
-                  </li>
-                  <li>
-                    <LinkComponent
-                      className={cn(
-                        buttonVariants({ variant: 'outline', size: 'default' }),
-                        'w-full shadow-md shadow-foreground/10',
-                      )}
-                      onClick={() => toggleMobileNav(0)}
-                      href={`/${lang}/curriculum`}
-                      title={dictionary.curriculum}
-                    >
-                      {dictionary.curriculum}
-                    </LinkComponent>
-                  </li>
+                  <NavigationLinks
+                    onClose={() => toggleMobileNav(0)}
+                    dictionary={dictionary}
+                    lang={lang}
+                  />
                 </ul>
               </motion.div>
             </motion.div>

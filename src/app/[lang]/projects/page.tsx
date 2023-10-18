@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { Locale } from '@/i18n.config'
-import Curriculum from '@/components/Curriculum'
 import { getDictionary } from '@/lib/dictionary'
+import ProjectsList from '@/components/Projects/ProjectsList'
 
 export async function generateMetadata({
   params,
@@ -11,8 +11,8 @@ export async function generateMetadata({
   const { metadata } = await getDictionary(params.lang)
 
   return {
-    title: metadata['curriculum'].title,
-    description: metadata['curriculum'].description,
+    title: metadata['projects'].title,
+    description: metadata['projects'].description,
   }
 }
 
@@ -21,5 +21,5 @@ export default function CurriculumPage({
 }: {
   params: { lang: Locale }
 }) {
-  return <Curriculum lang={lang} />
+  return <ProjectsList lang={lang} />
 }
