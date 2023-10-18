@@ -17,13 +17,14 @@ const About = async ({ lang }: { lang: Locale }) => {
           <div className="flex gap-2">
             <LinkComponent
               href="https://github.com/Luan-Patrik"
-              title="Github"
+              title="GitHub"
               target="_blank"
               className={cn(
                 buttonVariants({ size: 'icon', variant: 'outline' }),
               )}
             >
               <Github size={24} />
+              <span className="sr-only">GitHub</span>
             </LinkComponent>
             <LinkComponent
               href="https://www.linkedin.com/in/luan-patrik-a4b05b223/"
@@ -34,6 +35,7 @@ const About = async ({ lang }: { lang: Locale }) => {
               )}
             >
               <Linkedin size={24} />
+              <span className="sr-only">LinkedIn</span>
             </LinkComponent>
           </div>
         </div>

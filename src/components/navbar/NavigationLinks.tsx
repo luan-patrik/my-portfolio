@@ -6,11 +6,19 @@ import { getDictionary } from '@/lib/dictionary'
 
 interface NavigationLinks {
   lang: Locale
+  onClose?: () => void
+  dictionary: {
+    home: string
+    about: string
+    projects: string
+  }
 }
 
-export const NavigationLinks = async ({ lang }: NavigationLinks) => {
-  const { navigation } = await getDictionary(lang)
-
+export const NavigationLinks = ({
+  lang,
+  onClose,
+  dictionary,
+}: NavigationLinks) => {
   return (
     <>
       <li>
@@ -19,10 +27,11 @@ export const NavigationLinks = async ({ lang }: NavigationLinks) => {
             buttonVariants({ variant: 'outline', size: 'default' }),
             'w-full shadow-md shadow-foreground/10 sm:w-28',
           )}
+          onClick={onClose}
           href={`/${lang}`}
-          title={navigation['home']}
+          title={dictionary['home']}
         >
-          {navigation['home']}
+          {dictionary['home']}
         </LinkComponent>
       </li>
       <li>
@@ -31,10 +40,11 @@ export const NavigationLinks = async ({ lang }: NavigationLinks) => {
             buttonVariants({ variant: 'outline', size: 'default' }),
             'w-full shadow-md shadow-foreground/10 sm:w-28',
           )}
+          onClick={onClose}
           href={`/${lang}/about`}
-          title={navigation['about']}
+          title={dictionary['about']}
         >
-          {navigation['about']}
+          {dictionary['about']}
         </LinkComponent>
       </li>
       <li>
@@ -43,10 +53,11 @@ export const NavigationLinks = async ({ lang }: NavigationLinks) => {
             buttonVariants({ variant: 'outline', size: 'default' }),
             'w-full shadow-md shadow-foreground/10 sm:w-28',
           )}
-          href={`/${lang}/curriculum`}
-          title={navigation['curriculum']}
+          onClick={onClose}
+          href={`/${lang}/projects`}
+          title={dictionary['projects']}
         >
-          {navigation['curriculum']}
+          {dictionary['projects']}
         </LinkComponent>
       </li>
     </>

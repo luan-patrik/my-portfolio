@@ -8,33 +8,47 @@
       "title": "Luan DEV | About",
       "description": "About Luan Patrik"
     },
-    "curriculum": {
-      "title": "Luan DEV | Curriculum",
-      "description": "Luan Patrik curriculum"
+    "projects": {
+      "title": "Luan DEV | Projects",
+      "description": "Projects by Luan Patrik"
     }
   },
   "navigation": {
+    "openMenuMobile": "Open menu",
+    "closeMenuMobile": "Close menu",
     "home": "Home",
     "about": "About",
-    "curriculum": "Curriculum"
+    "projects": "Projects"
   },
   "locales": {
+    "title": "Change language",
     "en": "English",
     "pt": "Portuguese"
   },
   "themes": {
+    "title": "Change theme",
     "light": "Light",
     "dark": "Dark",
     "system": "System"
   },
   "page": {
     "home": {
-      "presentation": "Oi, sou Luan Patrik 👋"
+      "presentation": "Hi, I'm Luan Patrik 👋",
+      "description": "I have been studying for 2 years. During this journey, I created challenging projects that provided me with great learning and development of my skills and knowledge. I am a dedicated, creative person and always looking for new challenges, opportunities and learning."
     },
     "about": {
-      "description": "I would like to introduce me. My name is Luan Patrik, I'm 18 years old and I've been studying web development for about 2 years. I am a motivated young man who is looking for his first professional opportunity. I have a determined spirit and a desire to learn. Although I am still at the beginning of my career, I have a solid knowledge base acquired during my studies in <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong> and <strong>APIs</strong>. I have the ability to work in a team and a positive attitude. I am ready to face challenges that arise and adapt quickly to new situations.",
+      "description": "<strong>“</strong>My name is Luan Patrik, I'm 18 years old. My programming journey began when I started creating SAMP servers using the <strong>PAWN</strong> language. Since then I fell in love with the area. In 2021 I discovered web development through a friend and since then I started studying about it in an attempt to build a solid base of knowledge and information. During my studies in the area I learned a lot about the main languages and frameworks, they are <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong> and about <strong>APIs</strong>. I am constantly studying to improve and discover new features and languages to evolve professionally and personally.<strong>”</strong>.",
 
       "author": "Sincerely, Luan Patrik"
+    },
+    "projects": {
+      "website": "Website",
+      "repository": "Repository",
+      "projects": {
+        "Tabnews": {
+          "description": "Application developed in Next.js that offers users a simplified platform for publishing content. With an intuitive interface, TabNews makes reading news more efficient and enjoyable. The experience is optimized for mobile devices, ensuring easy access anywhere."
+        }
+      }
     }
   }
 }

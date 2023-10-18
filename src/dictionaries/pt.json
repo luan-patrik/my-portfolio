@@ -8,33 +8,47 @@
       "title": "Luan DEV | Sobre",
       "description": "Sobre Luan Patrik"
     },
-    "curriculum": {
-      "title": "Luan DEV | Currículo",
-      "description": "Currículo de Luan Patrik"
+    "projects": {
+      "title": "Luan DEV | Projetos",
+      "description": "Projetos de Luan Patrik"
     }
   },
   "navigation": {
+    "openMenuMobile": "Abrir menu",
+    "closeMenuMobile": "Fechar menu",
     "home": "Início",
     "about": "Sobre",
-    "curriculum": "Currículo"
+    "projects": "Projetos"
   },
   "locales": {
+    "title": "Mudar idioma",
     "en": "Inglês",
     "pt": "Português"
   },
   "themes": {
+    "title": "Mudar tema",
     "light": "Claro",
     "dark": "Escuro",
     "system": "Sistema"
   },
   "page": {
     "home": {
-      "presentation": "Oi, sou Luan Patrik 👋"
+      "presentation": "Oi, sou Luan Patrik 👋",
+      "description": "Estou estudando há 2 anos. Durante essa jornada, criei projetos desafiadores que me proporcionaram grande aprendizado e desenvolvimento de minhas habilidades e conhecimentos. Sou uma pessoa dedicada, criativa e sempre em busca de novos desafios, oportunidades e aprendizados."
     },
     "about": {
-      "description": "Gostaria de me apresentar. Meu nome é Luan Patrik, tenho 18 anos e estudo desenvolvimento web há cerca de 2 anos. Sou um jovem motivado que está em busca de sua primeira oportunidade profissional. Tenho um espírito determinado e uma vontade de aprender. Embora ainda esteja no início de minha carreira, possuo uma sólida base de conhecimentos adquirida durante meus estudos em <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong> e <strong>APIs</strong>. Tenho habilidade para trabalhar em equipe e uma atitude positiva. Estou pronto para enfrentar os desafios que surgirem e me adaptar rapidamente a novas situações.",
+      "description": "<strong>“</strong>Meu nome é Luan Patrik, tenho 18 anos. Minha jornada na programação começou quando iniciei na criação de servidores de SAMP usando a linguagem <strong>PAWN</strong>. Desde então me apaixonei pela área. Em 2021 conheci o desenvolvimento web através de um amigo e desde então comecei a estudar sobre em busca construir uma base sólida de conhecimentos e informações, durante meus estudos na área eu aprendi muito sobre as principais linguagens e frameworks, são elas <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong> e sobre <strong>APIs</strong>. Tenho constantemente estudando para aprimorar e conhecer novas funcionalidades e linguagens para evoluir profissionalmente e pessoalmente.<strong>”</strong>.",
 
       "author": "Atenciosamente, Luan Patrik"
+    },
+    "projects": {
+      "website": "Site",
+      "repository": "Repositório",
+      "projects": {
+        "Tabnews": {
+          "description": "Aplicativo desenvolvido em Next.js que oferece aos usuários uma plataforma simplificada para publicação de conteúdo. Com uma interface intuitiva, o TabNews torna a leitura de notícias mais eficiente e agradável. A experiência é otimizada para dispositivos móveis, garantindo fácil acesso em qualquer lugar."
+        }
+      }
     }
   }
 }
