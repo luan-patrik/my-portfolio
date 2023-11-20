@@ -34,10 +34,10 @@
   "page": {
     "home": {
       "presentation": "Oi, sou Luan Patrik 👋",
-      "description": "Estou estudando há 2 anos. Durante essa jornada, criei projetos desafiadores que me proporcionaram grande aprendizado e desenvolvimento de minhas habilidades e conhecimentos. Sou uma pessoa dedicada, criativa e sempre em busca de novos desafios, oportunidades e aprendizados."
+      "description": "Estou estudando há 2 anos. Durante essa jornada, criei projetos desafiadores que me proporcionaram grande aprendizado e desenvolvimento de minhas habilidades e conhecimentos em <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong>, <strong>Prisma</strong>, <strong>MongoDB</strong> e <strong>APIs</strong>."
     },
     "about": {
-      "description": "<strong>“</strong>Meu nome é Luan Patrik, tenho 18 anos. Minha jornada na programação começou quando iniciei na criação de servidores de SAMP usando a linguagem <strong>PAWN</strong>. Desde então me apaixonei pela área. Em 2021 conheci o desenvolvimento web através de um amigo e desde então comecei a estudar sobre em busca construir uma base sólida de conhecimentos e informações, durante meus estudos na área eu aprendi muito sobre as principais linguagens e frameworks, são elas <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong> e sobre <strong>APIs</strong>. Tenho constantemente estudando para aprimorar e conhecer novas funcionalidades e linguagens para evoluir profissionalmente e pessoalmente.<strong>”</strong>.",
+      "description": "<strong>“</strong>Meu nome é Luan Patrik, tenho 18 anos. Minha jornada na programação começou quando iniciei na criação de servidores de SAMP usando a linguagem <strong>PAWN</strong>. Desde então me apaixonei pela área. Em 2021 conheci o desenvolvimento web através de um amigo e desde então comecei a estudar sobre em busca construir uma base sólida de conhecimentos e informações, durante meus estudos na área eu aprendi muito sobre as principais linguagens e frameworks, são elas <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong>, <strong>Prisma</strong>, <strong>MongoDB</strong> e <strong>APIs</strong>. Tenho constantemente estudando para aprimorar e conhecer novas funcionalidades e linguagens para evoluir profissionalmente e pessoalmente.<strong>”</strong>.",
 
       "author": "Atenciosamente, Luan Patrik"
     },
@@ -47,6 +47,12 @@
       "projects": {
         "Tabnews": {
           "description": "Aplicativo desenvolvido em Next.js que oferece aos usuários uma plataforma simplificada para publicação de conteúdo. Com uma interface intuitiva, o TabNews torna a leitura de notícias mais eficiente e agradável. A experiência é otimizada para dispositivos móveis, garantindo fácil acesso em qualquer lugar."
+        },
+        "GameSet": {
+          "description": "Aplicativo desenvolvido em Next.js que oferece aos usuários uma plataforma simples para guardar as configurações de seus jogos. Possui uma interface intuitiva e de fácil utilização. A experiência é otimizada para dispositivos móveis, garantindo fácil acesso em qualquer lugar."
+        },
+        "SmarFit": {
+          "description": "O Desafio SmartFit foi desenvolvido em Next.js e oferece aos usuários uma plataforma simples para filtrar unidades, verificando se estão abertas ou fechadas. A interface é intuitiva e fácil de usar, e a experiência foi otimizada para dispositivos móveis, garantindo acesso conveniente de qualquer lugar."
         }
       }
     }

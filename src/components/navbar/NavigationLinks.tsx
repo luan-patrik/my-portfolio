@@ -2,7 +2,6 @@ import { cn } from '@/lib/utils'
 import { LinkComponent } from '../ui/link'
 import { buttonVariants } from '../ui/button'
 import { Locale } from '@/i18n.config'
-import { getDictionary } from '@/lib/dictionary'
 
 interface NavigationLinks {
   lang: Locale
@@ -25,7 +24,7 @@ export const NavigationLinks = ({
         <LinkComponent
           className={cn(
             buttonVariants({ variant: 'outline', size: 'default' }),
-            'w-full shadow-md shadow-foreground/10 sm:w-28',
+            'w-full border sm:w-28',
           )}
           onClick={onClose}
           href={`/${lang}`}
@@ -38,7 +37,7 @@ export const NavigationLinks = ({
         <LinkComponent
           className={cn(
             buttonVariants({ variant: 'outline', size: 'default' }),
-            'w-full shadow-md shadow-foreground/10 sm:w-28',
+            'w-full border sm:w-28',
           )}
           onClick={onClose}
           href={`/${lang}/about`}
@@ -51,7 +50,7 @@ export const NavigationLinks = ({
         <LinkComponent
           className={cn(
             buttonVariants({ variant: 'outline', size: 'default' }),
-            'w-full shadow-md shadow-foreground/10 sm:w-28',
+            'w-full border sm:w-28',
           )}
           onClick={onClose}
           href={`/${lang}/projects`}

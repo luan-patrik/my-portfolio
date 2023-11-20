@@ -4,15 +4,12 @@ import { Locale } from '@/i18n.config'
 import { NavigationLinks } from './NavigationLinks'
 import MobileNavbar from './MobileNavbar'
 import { getDictionary } from '@/lib/dictionary'
-import { LinkComponent } from '../ui/link'
-import { cn } from '@/lib/utils'
-import { buttonVariants } from '../ui/button'
 
 const Navbar = async ({ lang }: { lang: Locale }) => {
   const { navigation, themes, locales } = await getDictionary(lang)
 
   return (
-    <nav className="sticky inset-x-0 top-0 z-30 bg-background py-2">
+    <nav className="sticky inset-x-0 top-0 z-30 border-b border-muted bg-background py-2">
       <div className="container flex h-full items-center justify-between sm:justify-center sm:gap-10">
         <ul className="hidden gap-10 sm:flex">
           <NavigationLinks dictionary={navigation} lang={lang} />

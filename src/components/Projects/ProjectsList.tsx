@@ -9,19 +9,17 @@ const ProjectsList = async ({ lang }: { lang: Locale }) => {
 
   return (
     <div className="container">
-      <div className="flex min-h-[calc(100vh_-_3.5rem)] flex-col justify-center gap-8">
+      <div className="flex min-h-[calc(100vh_-_5.5rem)] flex-col justify-center gap-6">
         {projectList.map((project, i) => (
-          <div key={i}>
-            <Project
-              key={i}
-              title={project.title}
-              description={project.description}
-              website={project.website}
-              repository={project.repository}
-              img={project.img}
-              dictionary={page.projects}
-            />
-          </div>
+          <Project
+            key={i}
+            title={project.title}
+            description={project.description}
+            website={project.website}
+            repository={project.repository}
+            img={project.img}
+            dictionary={page.projects}
+          />
         ))}
       </div>
     </div>

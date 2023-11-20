@@ -5,9 +5,9 @@ import { motion, AnimatePresence, MotionConfig, useCycle } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { buttonVariants } from '../ui/button'
 import { cn } from '@/lib/utils'
-import { LinkComponent } from '../ui/link'
 import { Locale } from '@/i18n.config'
 import { NavigationLinks } from './NavigationLinks'
+import Contact from '../Contact'
 
 interface AnimateNavMobileProps {
   children: ReactNode
@@ -41,7 +41,7 @@ const AnimateNavMobile = ({
         }
         className={cn(
           buttonVariants({ size: 'icon', variant: 'outline' }),
-          'relative z-50 shadow-md shadow-foreground/10',
+          'relative z-50',
         )}
       >
         {mobileNav ? (
@@ -60,7 +60,6 @@ const AnimateNavMobile = ({
         {mobileNav && (
           <MotionConfig
             transition={{
-              type: 'spring',
               bounce: 0.099,
             }}
           >
@@ -69,14 +68,14 @@ const AnimateNavMobile = ({
               variants={{
                 open: {
                   opacity: 1,
-                  x: 0,
+                  y: '0%',
                   transition: {
                     when: 'beforeChildren',
                   },
                 },
                 closed: {
                   opacity: 0,
-                  x: '-100%',
+                  y: '100%',
                   transition: {
                     when: 'afterChildren',
                   },
@@ -85,7 +84,7 @@ const AnimateNavMobile = ({
               initial="closed"
               animate="open"
               exit="closed"
-              className="brightness-120 fixed inset-0 flex-col justify-start bg-ring sm:hidden"
+              className="fixed bottom-0 left-0 right-0 h-1/2 w-full flex-col rounded-t-md bg-background py-10  ring-2 ring-ring sm:hidden"
             >
               <motion.div
                 variants={{
@@ -94,11 +93,11 @@ const AnimateNavMobile = ({
                     opacity: 1,
                   },
                   closed: {
-                    y: '25%',
+                    y: '100%',
                     opacity: 0,
                   },
                 }}
-                className="container mt-14"
+                className="container grid grid-cols-1 grid-rows-2 place-content-between"
               >
                 <ul className="flex flex-col space-y-2 sm:hidden">
                   <NavigationLinks
@@ -107,6 +106,9 @@ const AnimateNavMobile = ({
                     lang={lang}
                   />
                 </ul>
+                <div className="flex justify-center">
+                  <Contact />
+                </div>
               </motion.div>
             </motion.div>
           </MotionConfig>

@@ -32,7 +32,7 @@ const ChangeLocale = ({
           variant="outline"
           size="icon"
           title={dictionary['title']}
-          className="z-50 shadow-md shadow-foreground/10"
+          className="z-50"
         >
           <Globe className="h-[1.2rem] w-[1.2rem] scale-100" />
           <span className="sr-only">{dictionary['title']}</span>

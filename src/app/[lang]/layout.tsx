@@ -55,7 +55,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar lang={params.lang} />
-          <main>{children}</main>
+          <main className="py-4">{children}</main>
         </ThemeProvider>
       </body>
     </html>
