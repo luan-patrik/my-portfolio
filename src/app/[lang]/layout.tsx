@@ -32,7 +32,7 @@ export async function generateMetadata({
       icon: '/assets/favicon.ico/',
     },
     alternates: {
-      canonical: '/',
+      canonical: `/${params.lang}`,
       languages: {
         pt: '/pt',
         en: '/en',
