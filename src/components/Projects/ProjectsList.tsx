@@ -9,7 +9,7 @@ const ProjectsList = async ({ lang }: { lang: Locale }) => {
 
   return (
     <div className="container">
-      <div className="flex min-h-[calc(100vh_-_5.5rem)] flex-col justify-center gap-6">
+      <div className="flex min-h-[calc(100svh_-_5.6rem)] flex-col justify-center gap-6">
         {projectList.map((project, i) => (
           <Project
             key={i}

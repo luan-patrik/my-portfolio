@@ -10,9 +10,9 @@ const Home = async ({ lang }: { lang: Locale }) => {
 
   return (
     <div className="container">
-      <div className="flex min-h-[calc(100vh_-_5.5rem)] items-center justify-center">
-        <div className="flex flex-col items-center gap-6 lg:flex-row">
-          <div className="flex flex-col gap-2 lg:w-fit">
+      <div className="flex min-h-[calc(100svh_-_5.6rem)] items-center justify-center">
+        <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-6">
+          <div className="flex flex-col gap-4 lg:w-fit lg:gap-2">
             <div>
               <h1 className="text-base font-normal md:text-xl">
                 {page['home'].presentation}
@@ -27,11 +27,11 @@ const Home = async ({ lang }: { lang: Locale }) => {
               ></p>
             </div>
             <Link
-              className={cn(buttonVariants({ variant: 'secondary' }), 'w-full')}
-              href="/assets/curriculo.pdf"
+              className={cn(buttonVariants({ variant: 'outline' }), 'w-full')}
+              href="https://docs.google.com/document/d/19lMJ5p95hjIOqwnNSe9lVGC9SEXp6yeQwTVfvQeMzEk/edit"
               target="_blank"
             >
-              CV
+              {page['home'].curriculum}
             </Link>
           </div>
           <div>
