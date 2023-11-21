@@ -34,7 +34,8 @@
   "page": {
     "home": {
       "presentation": "Oi, sou Luan Patrik 👋",
-      "description": "Estou estudando há 2 anos. Durante essa jornada, criei projetos desafiadores que me proporcionaram grande aprendizado e desenvolvimento de minhas habilidades e conhecimentos em <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong>, <strong>Prisma</strong>, <strong>MongoDB</strong> e <strong>APIs</strong>."
+      "description": "Estou estudando há 2 anos. Durante essa jornada, criei projetos desafiadores que me proporcionaram grande aprendizado e desenvolvimento de minhas habilidades e conhecimentos em <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong>, <strong>Prisma</strong>, <strong>MongoDB</strong> e <strong>APIs</strong>.",
+      "curriculum": "Baixar CV"
     },
     "about": {
       "description": "<strong>“</strong>Meu nome é Luan Patrik, tenho 18 anos. Minha jornada na programação começou quando iniciei na criação de servidores de SAMP usando a linguagem <strong>PAWN</strong>. Desde então me apaixonei pela área. Em 2021 conheci o desenvolvimento web através de um amigo e desde então comecei a estudar sobre em busca construir uma base sólida de conhecimentos e informações, durante meus estudos na área eu aprendi muito sobre as principais linguagens e frameworks, são elas <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong>, <strong>Prisma</strong>, <strong>MongoDB</strong> e <strong>APIs</strong>. Tenho constantemente estudando para aprimorar e conhecer novas funcionalidades e linguagens para evoluir profissionalmente e pessoalmente.<strong>”</strong>.",
