@@ -14,11 +14,11 @@ export async function generateMetadata({
     title: metadata['about'].title,
     description: metadata['about'].description,
     alternates: {
-      canonical: '/about',
+      canonical: `/${params.lang}/about`,
       languages: {
         pt: '/pt/about',
-        en: '/en/about'
-      }
+        en: '/en/about',
+      },
     },
   }
 }
