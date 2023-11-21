@@ -13,6 +13,13 @@ export async function generateMetadata({
   return {
     title: metadata['about'].title,
     description: metadata['about'].description,
+    alternates: {
+      canonical: '/about',
+      languages: {
+        pt: '/pt/about',
+        en: '/en/about'
+      }
+    },
   }
 }
 
