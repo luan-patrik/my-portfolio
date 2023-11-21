@@ -7,7 +7,7 @@ const About = async ({ lang }: { lang: Locale }) => {
 
   return (
     <div className="container">
-      <div className="flex min-h-[calc(100vh_-_5.5rem)] items-center justify-center">
+      <div className="flex min-h-[calc(100svh_-_5.6rem)] items-center justify-center">
         <div className="flex max-w-5xl flex-col items-center gap-2 text-base font-normal sm:text-lg">
           <p dangerouslySetInnerHTML={{ __html: page.about.description }}></p>
           <p>{page['about'].author}</p>
