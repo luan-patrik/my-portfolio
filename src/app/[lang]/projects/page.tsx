@@ -14,7 +14,7 @@ export async function generateMetadata({
     title: metadata['projects'].title,
     description: metadata['projects'].description,
     alternates: {
-      canonical: '/projects',
+      canonical: `/${params.lang}/projects`,
       languages: {
         pt: '/pt/projects',
         en: '/en/projects',
