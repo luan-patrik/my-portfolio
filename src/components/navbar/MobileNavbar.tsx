@@ -46,12 +46,20 @@ const AnimateNavMobile = ({
       >
         {mobileNav ? (
           <>
-            <X className="h-[1.2rem] w-[1.2rem] scale-100" />
+            <X
+              className="h-[1.2rem] w-[1.2rem] scale-100"
+              aria-hidden="true"
+              focusable="false"
+            />
             <span className="sr-only">{dictionary['closeMenuMobile']}</span>
           </>
         ) : (
           <>
-            <Menu className="h-[1.2rem] w-[1.2rem] scale-100" />
+            <Menu
+              className="h-[1.2rem] w-[1.2rem] scale-100"
+              aria-hidden="true"
+              focusable="false"
+            />
             <span className="sr-only">{dictionary['openMenuMobile']}</span>
           </>
         )}

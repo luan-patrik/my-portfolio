@@ -9,7 +9,7 @@ const Home = async ({ lang }: { lang: Locale }) => {
   const { page } = await getDictionary(lang)
 
   return (
-    <div className="container">
+    <section className="container">
       <div className="flex min-h-[calc(100svh_-_5.6rem)] items-center justify-center">
         <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-6">
           <div className="flex flex-col gap-4 lg:w-fit lg:gap-2">
@@ -37,6 +37,7 @@ const Home = async ({ lang }: { lang: Locale }) => {
           <div>
             <Image
               src="/assets/photo.svg"
+              className="h-auto w-auto"
               priority
               width={700}
               height={300}
@@ -45,7 +46,7 @@ const Home = async ({ lang }: { lang: Locale }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

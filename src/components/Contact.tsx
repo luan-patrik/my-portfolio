@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils'
 import { buttonVariants } from './ui/button'
 import { LinkComponent } from './ui/link'
 import { GithubIcon, LinkedinIcon } from 'lucide-react'
+import { Icon } from './Icon'
 
 const Contact = () => {
   return (
@@ -12,7 +13,7 @@ const Contact = () => {
         target="_blank"
         className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
       >
-        <GithubIcon size={24} />
+        <GithubIcon aria-hidden="true" focusable="false" size={24} />
         <span className="sr-only">GitHub</span>
       </LinkComponent>
       <LinkComponent
@@ -21,8 +22,17 @@ const Contact = () => {
         target="_blank"
         className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
       >
-        <LinkedinIcon size={24} />
+        <LinkedinIcon aria-hidden="true" focusable="false" size={24} />
         <span className="sr-only">LinkedIn</span>
+      </LinkComponent>
+      <LinkComponent
+        href="https://api.whatsapp.com/send?phone=5551998913374"
+        title="WhatsApp"
+        target="_blank"
+        className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
+      >
+        <Icon.whatsapp aria-hidden="true" focusable="false" size={24} />
+        <span className="sr-only">WhatsApp</span>
       </LinkComponent>
     </div>
   )

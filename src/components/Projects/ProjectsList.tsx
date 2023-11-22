@@ -8,7 +8,7 @@ const ProjectsList = async ({ lang }: { lang: Locale }) => {
   const projectList = await projectsData({ lang })
 
   return (
-    <div className="container">
+    <section className="container">
       <div className="flex min-h-[calc(100svh_-_5.6rem)] flex-col justify-center gap-6">
         {projectList.map((project, i) => (
           <Project
@@ -22,7 +22,7 @@ const ProjectsList = async ({ lang }: { lang: Locale }) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 
