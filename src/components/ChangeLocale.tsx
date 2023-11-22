@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { Globe } from 'lucide-react'
+import { Languages } from 'lucide-react'
 import Link from 'next/link'
 import {
   DropdownMenu,
@@ -34,7 +34,11 @@ const ChangeLocale = ({
           title={dictionary['title']}
           className="z-50"
         >
-          <Globe className="h-[1.2rem] w-[1.2rem] scale-100" />
+          <Languages
+            className="h-[1.2rem] w-[1.2rem] scale-100"
+            aria-hidden="true"
+            focusable="false"
+          />
           <span className="sr-only">{dictionary['title']}</span>
         </Button>
       </DropdownMenuTrigger>

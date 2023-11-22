@@ -30,7 +30,7 @@ const Project = async ({
   const { base64 } = await getPlaiceholder(buffer)
 
   return (
-    <section className="group relative mx-auto max-w-5xl overflow-hidden rounded-md border border-foreground bg-muted">
+    <div className="group relative mx-auto w-full max-w-5xl overflow-hidden rounded-md border border-foreground bg-muted">
       <div className="flex h-full flex-col gap-2 px-5 py-4 sm:max-w-[50%] sm:py-10 sm:pr-2 sm:pt-10">
         <h1 className="text-2xl font-semibold">{title}</h1>
         <p className="hidden text-ellipsis text-sm leading-relaxed text-foreground/90 sm:block md:text-base">
@@ -44,7 +44,7 @@ const Project = async ({
           placeholder="blur"
           blurDataURL={base64}
           alt={`Imagem de ${title}`}
-          className="bottom-0 w-full rounded-md border border-ring shadow-md transition sm:absolute sm:-right-28 sm:w-96 sm:rounded-b-none sm:group-hover:translate-x-3 sm:group-hover:translate-y-3 sm:group-hover:-rotate-2 sm:group-hover:scale-[1.04] md:w-[28.25rem]"
+          className="w-full rounded-md border border-ring shadow-md transition sm:absolute sm:-right-28 sm:bottom-0 sm:w-96 sm:rounded-b-none sm:group-hover:translate-x-3 sm:group-hover:translate-y-3 sm:group-hover:-rotate-2 sm:group-hover:scale-[1.04] md:w-[28.25rem]"
           style={{
             objectFit: 'cover',
           }}
@@ -58,7 +58,8 @@ const Project = async ({
               'flex w-full items-center justify-center gap-2 border-ring',
             )}
           >
-            {dictionary.website} <ExternalLink size={14} />
+            {dictionary.website}{' '}
+            <ExternalLink aria-hidden="true" focusable="false" size={14} />
           </LinkComponent>
 
           <LinkComponent
@@ -69,11 +70,12 @@ const Project = async ({
               'flex w-full items-center justify-center gap-2 border-ring',
             )}
           >
-            {dictionary.repository} <Github size={14} />
+            {dictionary.repository}{' '}
+            <Github aria-hidden="true" focusable="false" size={14} />
           </LinkComponent>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

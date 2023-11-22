@@ -14,25 +14,25 @@ export const projectsData = async ({ lang }: { lang: Locale }) => {
 
   const projects: ExtendedProjects[] = [
     {
-      title: 'Tabnews - Clone',
-      description: `${page['projects'].projects.Tabnews.description}`,
-      website: 'https://tab-news-clone-yvi9.vercel.app',
-      repository: 'https://github.com/Luan-Patrik/TabNews-Clone',
-      img: '/assets/projects/Tabnews-Clone.png',
-    },
-    {
       title: 'Game Set',
       description: `${page['projects'].projects.GameSet.description}`,
       website: 'https://game-set-zeta.vercel.app',
       repository: 'https://github.com/Luan-Patrik/game-set',
-      img: '/assets/projects/Game-Set.png',
+      img: '/assets/projects/game-set.webp',
+    },
+    {
+      title: 'News Today',
+      description: `${page['projects'].projects.NewsToday.description}`,
+      website: 'https://newstoday01.vercel.app',
+      repository: 'https://github.com/Luan-Patrik/News-Today',
+      img: '/assets/projects/news-today.webp',
     },
     {
       title: 'Smart Fit',
-      description: `${page['projects'].projects.SmarFit.description}`,
+      description: `${page['projects'].projects.SmartFit.description}`,
       website: 'https://front-end-challenge-smartfit.vercel.app',
       repository: 'https://github.com/Luan-Patrik/front-end-challenge-smartfit',
-      img: '/assets/projects/Smart-Fit.png',
+      img: '/assets/projects/smart-fit.webp',
     },
   ]
 
