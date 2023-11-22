@@ -46,13 +46,13 @@
       "website": "Website",
       "repository": "Repository",
       "projects": {
-        "Tabnews": {
-          "description": "Application developed in Next.js that offers users a simplified platform for publishing content. With an intuitive interface, TabNews makes reading news more efficient and enjoyable. The experience is optimized for mobile devices, ensuring easy access anywhere."
+        "NewsToday": {
+          "description": "Application developed in Next.js that offers users a simplified platform for publishing content. With an intuitive interface, NewsToday makes reading news more efficient and enjoyable. The experience is optimized for mobile devices, ensuring easy access anywhere."
         },
         "GameSet": {
           "description": "Application developed in Next.js that offers users a simple platform to save their game settings. It has an intuitive and easy-to-use interface. The experience is optimized for mobile devices, ensuring easy access anywhere."
         },
-        "SmarFit": {
+        "SmartFit": {
           "description": "O Desafio SmartFit foi desenvolvido em Next.js e oferece aos usuários uma plataforma simples para filtrar unidades, verificando se estão abertas ou fechadas. A interface é intuitiva e fácil de usar, e a experiência foi otimizada para dispositivos móveis, garantindo acesso conveniente de qualquer lugar."
         }
       }
