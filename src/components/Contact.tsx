@@ -17,7 +17,7 @@ const Contact = () => {
         <span className="sr-only">GitHub</span>
       </LinkComponent>
       <LinkComponent
-        href="https://www.linkedin.com/in/luan-patrik-a4b05b223/"
+        href="https://www.linkedin.com/in/luanpatrik"
         title="LinkedIn"
         target="_blank"
         className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
