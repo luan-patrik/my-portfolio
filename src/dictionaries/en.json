@@ -39,7 +39,6 @@
     },
     "about": {
       "description": "<strong>“</strong>My name is Luan Patrik, I'm 18 years old. My programming journey began when I started creating SAMP servers using the <strong>PAWN</strong> language. Since then I fell in love with the area. In 2021 I discovered web development through a friend and since then I started studying about it in an attempt to build a solid base of knowledge and information. During my studies in the area I learned a lot about the main languages and frameworks, they are <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, <strong>Tailwind</strong>, <strong>React</strong>, <strong>Next.js</strong>, <strong>Prisma</strong>, <strong>MongoDB</strong> and <strong>APIs</strong>. I am constantly studying to improve and discover new features and languages to evolve professionally and personally<strong>”</strong>.",
-
       "author": "Sincerely, Luan Patrik"
     },
     "projects": {
