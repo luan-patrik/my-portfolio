@@ -14,10 +14,10 @@ export async function generateMetadata({
     title: metadata['projects'].title,
     description: metadata['projects'].description,
     alternates: {
-      canonical: `/${params.lang}/projects`,
+      canonical: `/projects`,
       languages: {
-        pt: '/pt/projects',
-        en: '/en/projects',
+        pt: 'https://luanpatrik.com/pt/projects',
+        en: 'https://luanpatrik.com/en/projects',
       },
     },
   }
