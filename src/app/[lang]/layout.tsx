@@ -25,17 +25,17 @@ export async function generateMetadata({
   const { metadata } = await getDictionary(params.lang)
 
   return {
-    metadataBase: new URL('https://luanpatrik.com'),
+    metadataBase: new URL(`https://luanpatrik.com/${params.lang}`),
     title: metadata['home'].title,
     description: metadata['home'].description,
     icons: {
       icon: '/assets/favicon.ico/',
     },
     alternates: {
-      canonical: `/${params.lang}`,
+      canonical: `https://luanpatrik.com/${params.lang}`,
       languages: {
-        pt: '/pt',
-        en: '/en',
+        pt: `https://luanpatrik.com/pt`,
+        en: `https://luanpatrik.com/en`,
       },
     },
     verification: {
