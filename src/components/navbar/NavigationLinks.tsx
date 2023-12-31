@@ -1,62 +1,49 @@
+'use client'
+
 import { cn } from '@/lib/utils'
+import { usePathname } from 'next/navigation'
 import { LinkComponent } from '../ui/link'
-import { buttonVariants } from '../ui/button'
-import { Locale } from '@/i18n.config'
 
 interface NavigationLinks {
-  lang: Locale
   onClose?: () => void
-  dictionary: {
-    home: string
-    about: string
-    projects: string
-  }
 }
 
-export const NavigationLinks = ({
-  lang,
-  onClose,
-  dictionary,
-}: NavigationLinks) => {
+export const NavigationLinks = ({ onClose }: NavigationLinks) => {
+  const pathname = usePathname()
+
   return (
     <>
-      <li>
+      <li className='relative'>
         <LinkComponent
           className={cn(
-            buttonVariants({ variant: 'outline', size: 'default' }),
-            'w-full border sm:w-28',
+            pathname === '/' &&
+              'text-muted-foreground after:w-1/2 after:bg-muted-foreground',
           )}
           onClick={onClose}
-          href={`/${lang}`}
-          title={dictionary['home']}
+          href='/'
+          title='Início'
         >
-          {dictionary['home']}
+          Início
         </LinkComponent>
       </li>
       <li>
         <LinkComponent
-          className={cn(
-            buttonVariants({ variant: 'outline', size: 'default' }),
-            'w-full border sm:w-28',
-          )}
           onClick={onClose}
-          href={`/${lang}/about`}
-          title={dictionary['about']}
+          className={cn(pathname === '/sobre' && 'after:w-1/2')}
+          href='/sobre'
+          title='Sobre'
         >
-          {dictionary['about']}
+          Sobre
         </LinkComponent>
       </li>
       <li>
         <LinkComponent
-          className={cn(
-            buttonVariants({ variant: 'outline', size: 'default' }),
-            'w-full border sm:w-28',
-          )}
+          className={cn(pathname === '/projetos' && 'after:w-1/2')}
           onClick={onClose}
-          href={`/${lang}/projects`}
-          title={dictionary['projects']}
+          href='/projetos'
+          title='Projetos'
         >
-          {dictionary['projects']}
+          Projetos
         </LinkComponent>
       </li>
     </>
