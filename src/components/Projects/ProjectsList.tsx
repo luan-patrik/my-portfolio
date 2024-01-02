@@ -6,7 +6,7 @@ const ProjectsList = () => {
 
   return (
     <section className='container'>
-      <div className='flex min-h-[calc(100svh_-_5.6rem)] flex-col justify-center gap-6'>
+      <div className='flex min-h-[calc(100svh_-_92px)] flex-col justify-center gap-6'>
         {projectList.map((project, i) => (
           <Project
             key={i}
