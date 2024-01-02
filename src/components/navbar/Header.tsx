@@ -4,10 +4,10 @@ import { NavigationLinks } from './NavigationLinks'
 
 const Header = () => {
   return (
-    <header className='container flex min-h-[3.75rem] items-center outline outline-accent outline-1'>
+    <header className='container sticky inset-x-0 flex min-h-[3.75rem] items-center bg-background'>
       <Link
         href='/'
-        className='p-2 font-bold uppercase transition-colors hover:bg-accent'
+        className='rounded-md p-2 font-bold uppercase transition-colors hover:bg-accent'
       >
         Luan Patrik
       </Link>

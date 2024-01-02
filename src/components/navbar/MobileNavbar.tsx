@@ -3,14 +3,9 @@
 import { cn } from '@/lib/utils'
 import { AnimatePresence, MotionConfig, motion, useCycle } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { ReactNode } from 'react'
-import Contact from '../Contact'
+import SocialLinks from '../SocialLinks'
 import { buttonVariants } from '../ui/button'
 import { NavigationLinks } from './NavigationLinks'
-
-interface AnimateNavMobileProps {
-  children: ReactNode
-}
 
 const AnimateNavMobile = () => {
   const [mobileNav, toggleMobileNav] = useCycle<boolean>(false, true)
@@ -94,7 +89,7 @@ const AnimateNavMobile = () => {
                   <NavigationLinks onClose={() => toggleMobileNav(0)} />
                 </ul>
                 <div className='flex justify-center'>
-                  <Contact />
+                  <SocialLinks />
                 </div>
               </motion.div>
             </motion.div>
