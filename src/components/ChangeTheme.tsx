@@ -16,12 +16,7 @@ export const ChangeTheme = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant='outline'
-          size='icon'
-          title='Mudar tema'
-          className='z-50'
-        >
+        <Button variant='ghost' title='Mudar tema' className='z-50 h-auto p-2'>
           <Sun
             aria-hidden='true'
             focusable='false'
