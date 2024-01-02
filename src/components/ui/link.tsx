@@ -16,7 +16,7 @@ function LinkComponent({
       href={href}
       target={target}
       className={cn(
-        'relative text-sm font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:rounded-full after:bg-foreground after:py-[0.05rem] after:transition-all after:duration-300',
+        'relative',
         className,
       )}
       {...props}
@@ -25,3 +25,4 @@ function LinkComponent({
 }
 
 export { LinkComponent }
+
