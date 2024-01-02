@@ -1,10 +1,10 @@
-import Contact from './Contact'
+import SocialLinks from './SocialLinks'
 
-const About = async () => {
+const About = () => {
   return (
-    <section className="container">
-      <div className="flex min-h-[calc(100svh_-_5.6rem)] items-center justify-center">
-        <div className="flex max-w-5xl flex-col items-center gap-2 text-base font-normal sm:text-lg">
+    <section className='container'>
+      <div className='flex min-h-[calc(100svh_-_5.6rem)] items-center justify-center'>
+        <div className='flex max-w-5xl flex-col items-center gap-2 text-base font-normal sm:text-lg'>
           <p>
             <strong>“</strong>Meu nome é Luan Patrik, tenho 18 anos. Minha
             jornada na programação começou quando iniciei na criação de
@@ -25,7 +25,7 @@ const About = async () => {
           <p>
             Atenciosamente, <strong>Luan Patrik.</strong>
           </p>
-          <Contact />
+          <SocialLinks />
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
 import Project from '@/components/Projects/Project'
 import { projectsData } from '@/lib/data'
 
-const ProjectsList = async () => {
-  const projectList = await projectsData()
+const ProjectsList = () => {
+  const projectList = projectsData()
 
   return (
     <section className='container'>

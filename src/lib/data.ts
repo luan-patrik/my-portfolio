@@ -6,7 +6,7 @@ type ExtendedProjects = {
   img: string
 }
 
-export const projectsData = async () => {
+export const projectsData = () => {
   const projects: ExtendedProjects[] = [
     {
       title: 'Game Set',

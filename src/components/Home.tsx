@@ -3,11 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { buttonVariants } from './ui/button'
 
-const Home = async () => {
+const Home = () => {
   return (
     <section className='container'>
-      <div className='flex min-h-[calc(100svh_-_5.6rem)] items-center justify-center'>
-        <div className='flex flex-col items-center gap-4 lg:flex-row lg:gap-6'>
+      <div className='flex min-h-[calc(100svh_-_92px)] items-center justify-center'>
+        <div className='flex h-full flex-col items-center gap-4 lg:flex-row lg:gap-6'>
           <div className='flex flex-col gap-4 lg:w-fit lg:gap-2'>
             <div>
               <h1 className='text-base font-normal md:text-xl'>
