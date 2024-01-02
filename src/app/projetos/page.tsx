@@ -1,14 +1,12 @@
 import ProjectsList from '@/components/Projects/ProjectsList'
 import { Metadata } from 'next'
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Luan DEV | Projetos',
-    description: 'Projetos de Luan Patrik',
-    alternates: {
-      canonical: `/projects`,
-    },
-  }
+export const metadata: Metadata = {
+  title: 'Projetos | Luan Patrik - Desenvolvedor Front-End.',
+  description: 'Aqui você vai encontrar todos os meus projetos.',
+  alternates: {
+    canonical: `/projetos`,
+  },
 }
 
 export default function CurriculumPage() {
