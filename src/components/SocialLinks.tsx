@@ -4,14 +4,21 @@ import { Icon } from './Icon'
 import { buttonVariants } from './ui/button'
 import { LinkComponent } from './ui/link'
 
-const SocialLinks = () => {
+interface SocialLinksProps {
+  className?: string
+}
+
+const SocialLinks = ({ className }: SocialLinksProps) => {
   return (
-    <div className='flex items-center gap-2'>
+    <>
       <LinkComponent
         href='https://github.com/luan-patrik'
         title='GitHub'
         target='_blank'
-        className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
+        className={cn(
+          buttonVariants({ size: 'icon', variant: 'outline' }),
+          className,
+        )}
       >
         <GithubIcon aria-hidden='true' focusable='false' size={24} />
         <span className='sr-only'>GitHub</span>
@@ -20,7 +27,10 @@ const SocialLinks = () => {
         href='https://www.linkedin.com/in/luanpatrik'
         title='LinkedIn'
         target='_blank'
-        className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
+        className={cn(
+          buttonVariants({ size: 'icon', variant: 'outline' }),
+          className,
+        )}
       >
         <LinkedinIcon aria-hidden='true' focusable='false' size={24} />
         <span className='sr-only'>LinkedIn</span>
@@ -29,12 +39,15 @@ const SocialLinks = () => {
         href='https://wa.me/5551998913374'
         title='WhatsApp'
         target='_blank'
-        className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
+        className={cn(
+          buttonVariants({ size: 'icon', variant: 'outline' }),
+          className,
+        )}
       >
         <Icon.whatsapp aria-hidden='true' focusable='false' size={24} />
         <span className='sr-only'>WhatsApp</span>
       </LinkComponent>
-    </div>
+    </>
   )
 }
 

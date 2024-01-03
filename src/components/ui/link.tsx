@@ -1,19 +1,27 @@
 import { cn } from '@/lib/utils'
 import Link, { type LinkProps } from 'next/link'
+import { HTMLAttributeAnchorTarget, HTMLAttributes, forwardRef } from 'react'
 
-interface LinkComponentProps {
-  target?: string
+interface LinkComponentProps
+  extends HTMLAttributes<HTMLAnchorElement>,
+    LinkProps {
+  target?: HTMLAttributeAnchorTarget
 }
 
-function LinkComponent({
-  className,
-  href,
-  target,
-  ...props
-}: React.HTMLAttributes<HTMLAnchorElement> & LinkProps & LinkComponentProps) {
-  return (
-    <Link href={href} target={target} className={cn(className)} {...props} />
-  )
-}
+const LinkComponent = forwardRef<HTMLAnchorElement, LinkComponentProps>(
+  ({ className, href, target, ...props }, ref) => {
+    return (
+      <Link
+        ref={ref}
+        href={href}
+        target={target}
+        className={cn(className)}
+        {...props}
+      />
+    )
+  },
+)
+
+LinkComponent.displayName = 'LinkComponent'
 
 export { LinkComponent }
