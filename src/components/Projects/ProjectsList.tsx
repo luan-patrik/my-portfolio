@@ -1,15 +1,12 @@
-import { projectsData } from '@/lib/data'
 import Project from '@/components/Projects/Project'
-import { Locale } from '@/i18n.config'
-import { getDictionary } from '@/lib/dictionary'
+import { projectsData } from '@/lib/data'
 
-const ProjectsList = async ({ lang }: { lang: Locale }) => {
-  const { page } = await getDictionary(lang)
-  const projectList = await projectsData({ lang })
+const ProjectsList = () => {
+  const projectList = projectsData()
 
   return (
-    <section className="container">
-      <div className="flex min-h-[calc(100svh_-_5.6rem)] flex-col justify-center gap-6">
+    <section className='container'>
+      <div className='flex min-h-[calc(100svh_-_92px)] flex-col justify-center gap-6'>
         {projectList.map((project, i) => (
           <Project
             key={i}
@@ -18,7 +15,6 @@ const ProjectsList = async ({ lang }: { lang: Locale }) => {
             website={project.website}
             repository={project.repository}
             img={project.img}
-            dictionary={page.projects}
           />
         ))}
       </div>

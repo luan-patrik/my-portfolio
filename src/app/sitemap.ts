@@ -4,32 +4,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://luanpatrik.com'
   return [
     {
-      url: `${baseUrl}/pt`,
+      url: `${baseUrl}`,
       lastModified: new Date(),
       priority: 1,
     },
     {
-      url: `${baseUrl}/pt/about`,
+      url: `${baseUrl}/sobre`,
       lastModified: new Date(),
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/pt/projects`,
+      url: `${baseUrl}/projetos`,
       lastModified: new Date(),
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/en`,
-      lastModified: new Date(),
-      priority: 1
-    },
-    {
-      url: `${baseUrl}/en/about`,
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/en/projects`,
+      url: `${baseUrl}/contato`,
       lastModified: new Date(),
       priority: 0.8,
     },

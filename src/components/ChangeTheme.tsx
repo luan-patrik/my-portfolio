@@ -1,7 +1,5 @@
 'use client'
 
-import { useTheme } from 'next-themes'
-import { Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -9,34 +7,27 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
-export const ChangeTheme = ({
-  dictionary,
-}: {
-  dictionary: { title: string; light: string; dark: string; system: string }
-}) => {
+export const ChangeTheme = () => {
   const { setTheme } = useTheme()
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          title={dictionary['title']}
-          className="z-50"
-        >
+        <Button variant='ghost' title='Mudar tema' className='z-50 h-auto p-2'>
           <Sun
-            aria-hidden="true"
-            focusable="false"
-            className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+            aria-hidden='true'
+            focusable='false'
+            className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
           />
           <Moon
-            aria-hidden="true"
-            focusable="false"
-            className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+            aria-hidden='true'
+            focusable='false'
+            className='absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100'
           />
-          <span className="sr-only">{dictionary['title']}</span>
+          <span className='sr-only'>Mudar tema</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -44,25 +35,25 @@ export const ChangeTheme = ({
           onClick={() => {
             setTheme('light')
           }}
-          title={dictionary['light']}
+          title='Claro'
         >
-          {dictionary['light']}
+          Claro
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => {
             setTheme('dark')
           }}
-          title={dictionary['dark']}
+          title='Escuro'
         >
-          {dictionary['dark']}
+          Escuro
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => {
             setTheme('system')
           }}
-          title={dictionary['system']}
+          title='Sistema'
         >
-          {dictionary['system']}
+          Sistema
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

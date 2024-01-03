@@ -1,129 +1,156 @@
 'use client'
 
-import { ReactNode } from 'react'
-import { motion, AnimatePresence, MotionConfig, useCycle } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
-import { buttonVariants } from '../ui/button'
-import { cn } from '@/lib/utils'
-import { Locale } from '@/i18n.config'
-import { NavigationLinks } from './NavigationLinks'
-import Contact from '../Contact'
+import {
+  CommandIcon,
+  GithubIcon,
+  HomeIcon,
+  LinkedinIcon,
+  MailIcon,
+  MessageSquareIcon,
+  PhoneIcon,
+  RocketIcon,
+} from 'lucide-react'
+import { useState } from 'react'
+import { Icon } from '../Icon'
+import { Button } from '../ui/button'
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from '../ui/command'
+import { LinkComponent } from '../ui/link'
 
-interface AnimateNavMobileProps {
-  children: ReactNode
-}
+const MobileNavbar = () => {
+  const [open, setOpen] = useState<boolean>(false)
 
-const AnimateNavMobile = ({
-  dictionary,
-  lang,
-}: {
-  dictionary: {
-    openMenuMobile: string
-    closeMenuMobile: string
-    home: string
-    about: string
-    projects: string
+  const openDialogMenu = () => {
+    setOpen((open) => !open)
   }
-  lang: Locale
-}) => {
-  const [mobileNav, toggleMobileNav] = useCycle<boolean>(false, true)
+
+  const onClose = () => {
+    setOpen(false)
+  }
 
   return (
-    <div className="block sm:hidden">
-      <motion.button
-        onClick={() => toggleMobileNav()}
-        animate={mobileNav ? 'open' : 'closed'}
-        aria-expanded={mobileNav}
-        title={
-          mobileNav
-            ? dictionary['closeMenuMobile']
-            : dictionary['openMenuMobile']
-        }
-        className={cn(
-          buttonVariants({ size: 'icon', variant: 'outline' }),
-          'relative z-50',
-        )}
-      >
-        {mobileNav ? (
-          <>
-            <X
-              className="h-[1.2rem] w-[1.2rem] scale-100"
-              aria-hidden="true"
-              focusable="false"
-            />
-            <span className="sr-only">{dictionary['closeMenuMobile']}</span>
-          </>
-        ) : (
-          <>
-            <Menu
-              className="h-[1.2rem] w-[1.2rem] scale-100"
-              aria-hidden="true"
-              focusable="false"
-            />
-            <span className="sr-only">{dictionary['openMenuMobile']}</span>
-          </>
-        )}
-      </motion.button>
-      <AnimatePresence>
-        {mobileNav && (
-          <MotionConfig
-            transition={{
-              bounce: 0.099,
-            }}
-          >
-            <motion.div
-              key="mobile-nav"
-              variants={{
-                open: {
-                  opacity: 1,
-                  y: '0%',
-                  transition: {
-                    when: 'beforeChildren',
-                  },
-                },
-                closed: {
-                  opacity: 0,
-                  y: '100%',
-                  transition: {
-                    when: 'afterChildren',
-                  },
-                },
-              }}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="fixed bottom-0 left-0 right-0 h-1/2 w-full flex-col rounded-t-md bg-background py-10  ring-2 ring-ring sm:hidden"
+    <div className='block sm:hidden'>
+      <Button variant='ghost' className='h-auto p-2' onClick={openDialogMenu}>
+        <CommandIcon
+          className='h-[1.2rem] w-[1.2rem]'
+          aria-hidden='true'
+          focusable='false'
+        />
+      </Button>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandList>
+          <CommandEmpty>Nenhum resultado encontrado.</CommandEmpty>
+          <CommandGroup heading='Navegue'>
+            <LinkComponent href='/' onClick={onClose}>
+              <CommandItem className='p-2'>
+                <HomeIcon
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                Início
+              </CommandItem>
+            </LinkComponent>
+            <LinkComponent href='/sobre' onClick={onClose}>
+              <CommandItem>
+                <MessageSquareIcon
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                Sobre
+              </CommandItem>
+            </LinkComponent>
+            <LinkComponent href='/projetos' onClick={onClose}>
+              <CommandItem>
+                <RocketIcon
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                Projetos
+              </CommandItem>
+            </LinkComponent>
+            <LinkComponent href='/contato' onClick={onClose}>
+              <CommandItem>
+                <PhoneIcon
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                Contato
+              </CommandItem>
+            </LinkComponent>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading='Entre em contato'>
+            <LinkComponent
+              href='mailto:contato.luanpatrik@gmail.com'
+              target='_blank'
+              onClick={onClose}
             >
-              <motion.div
-                variants={{
-                  open: {
-                    y: '0%',
-                    opacity: 1,
-                  },
-                  closed: {
-                    y: '100%',
-                    opacity: 0,
-                  },
-                }}
-                className="container grid grid-cols-1 grid-rows-2 place-content-between"
-              >
-                <ul className="flex flex-col space-y-2 sm:hidden">
-                  <NavigationLinks
-                    onClose={() => toggleMobileNav(0)}
-                    dictionary={dictionary}
-                    lang={lang}
-                  />
-                </ul>
-                <div className="flex justify-center">
-                  <Contact />
-                </div>
-              </motion.div>
-            </motion.div>
-          </MotionConfig>
-        )}
-      </AnimatePresence>
+              <CommandItem>
+                <MailIcon
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                contato.luanpatrik@gmail.com
+              </CommandItem>
+            </LinkComponent>
+            <LinkComponent
+              href='https://wa.me/5551998913374'
+              target='_blank'
+              onClick={onClose}
+            >
+              <CommandItem>
+                <Icon.whatsapp
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                {'(51) 9 9891-3374'}
+              </CommandItem>
+            </LinkComponent>
+            <LinkComponent
+              href='https://github.com/Luan-Patrik'
+              target='_blank'
+              onClick={onClose}
+            >
+              <CommandItem>
+                <GithubIcon
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                github.com/luan-patrik
+              </CommandItem>
+            </LinkComponent>
+            <LinkComponent
+              href='https://www.linkedin.com/in/luanpatrik'
+              target='_blank'
+              onClick={onClose}
+            >
+              <CommandItem>
+                <LinkedinIcon
+                  className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
+                  aria-hidden='true'
+                  focusable='false'
+                />
+                linkedin.com/in/luanpatrik
+              </CommandItem>
+            </LinkComponent>
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
     </div>
   )
 }
 
-export default AnimateNavMobile
+export default MobileNavbar
