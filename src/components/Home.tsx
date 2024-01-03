@@ -4,6 +4,12 @@ import Link from 'next/link'
 import { buttonVariants } from './ui/button'
 
 const Home = () => {
+  const startDate = new Date(2021, 0, 1)
+  const currentDate = new Date()
+  const millisecondsDiff = currentDate.getTime() - startDate.getTime()
+  const daysDiff = millisecondsDiff / (1000 * 60 * 60 * 24) + 1
+  const years = Math.floor(daysDiff / 365.25)
+
   return (
     <section className='container'>
       <div className='flex min-h-[calc(100svh_-_92px)] items-center justify-center'>
@@ -19,8 +25,8 @@ const Home = () => {
                 <span>DEVELOPER</span>
               </h2>
               <p className='lg:3/4 max-w-2xl text-base font-normal leading-6 md:text-xl'>
-                Estou estudando há 2 anos. Durante essa jornada, criei projetos
-                desafiadores que me proporcionaram grande aprendizado e
+                Estou estudando há {years} anos. Durante essa jornada, criei
+                projetos desafiadores que me proporcionaram grande aprendizado e
                 desenvolvimento de minhas habilidades e conhecimentos em{' '}
                 <strong>HTML</strong>, <strong>JavaScript</strong>,{' '}
                 <strong>CSS</strong>, <strong>Tailwind</strong>,{' '}
