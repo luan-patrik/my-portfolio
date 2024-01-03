@@ -12,17 +12,8 @@ function LinkComponent({
   ...props
 }: React.HTMLAttributes<HTMLAnchorElement> & LinkProps & LinkComponentProps) {
   return (
-    <Link
-      href={href}
-      target={target}
-      className={cn(
-        'relative',
-        className,
-      )}
-      {...props}
-    />
+    <Link href={href} target={target} className={cn(className)} {...props} />
   )
 }
 
 export { LinkComponent }
-

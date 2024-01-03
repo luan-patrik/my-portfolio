@@ -8,11 +8,11 @@ interface NavigationLinks {
   onClose?: () => void
 }
 
-export const NavigationLinks = ({ onClose }: NavigationLinks) => {
+const NavigationLinks = ({ onClose }: NavigationLinks) => {
   const pathname = usePathname()
 
   return (
-    <nav className='flex-auto text-center'>
+    <nav className='hidden sm:block'>
       <ul className='relative m-0 inline-flex gap-2 p-0'>
         <li>
           <LinkComponent
@@ -74,3 +74,5 @@ export const NavigationLinks = ({ onClose }: NavigationLinks) => {
     </nav>
   )
 }
+
+export default NavigationLinks

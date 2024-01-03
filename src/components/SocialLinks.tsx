@@ -8,7 +8,7 @@ const SocialLinks = () => {
   return (
     <div className='flex items-center gap-2'>
       <LinkComponent
-        href='https://github.com/Luan-Patrik'
+        href='https://github.com/luan-patrik'
         title='GitHub'
         target='_blank'
         className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}
@@ -26,7 +26,7 @@ const SocialLinks = () => {
         <span className='sr-only'>LinkedIn</span>
       </LinkComponent>
       <LinkComponent
-        href='https://api.whatsapp.com/send?phone=5551998913374'
+        href='https://wa.me/5551998913374'
         title='WhatsApp'
         target='_blank'
         className={cn(buttonVariants({ size: 'icon', variant: 'outline' }))}

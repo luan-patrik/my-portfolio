@@ -20,7 +20,7 @@ const About = () => {
             <strong>MongoDB</strong> e <strong>APIs</strong>. Estou
             constantemente estudando para aprimorar e conhecer novas
             funcionalidades e linguagens para evoluir profissionalmente e
-            pessoalmente<strong>”</strong>
+            pessoalmente<strong>”</strong>.
           </p>
           <p>
             Atenciosamente, <strong>Luan Patrik.</strong>
