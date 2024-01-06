@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils'
 import { GithubIcon, LinkedinIcon } from 'lucide-react'
+import Link from 'next/link'
 import { Icon } from './Icon'
 import { buttonVariants } from './ui/button'
-import { LinkComponent } from './ui/link'
 
 interface SocialLinksProps {
   className?: string
@@ -11,9 +11,10 @@ interface SocialLinksProps {
 const SocialLinks = ({ className }: SocialLinksProps) => {
   return (
     <>
-      <LinkComponent
+      <Link
         href='https://github.com/luan-patrik'
         title='GitHub'
+        aria-label='GitHub'
         target='_blank'
         className={cn(
           buttonVariants({ size: 'icon', variant: 'outline' }),
@@ -22,10 +23,11 @@ const SocialLinks = ({ className }: SocialLinksProps) => {
       >
         <GithubIcon aria-hidden='true' focusable='false' size={24} />
         <span className='sr-only'>GitHub</span>
-      </LinkComponent>
-      <LinkComponent
+      </Link>
+      <Link
         href='https://www.linkedin.com/in/luanpatrik'
         title='LinkedIn'
+        aria-label='LinkedIn'
         target='_blank'
         className={cn(
           buttonVariants({ size: 'icon', variant: 'outline' }),
@@ -34,10 +36,11 @@ const SocialLinks = ({ className }: SocialLinksProps) => {
       >
         <LinkedinIcon aria-hidden='true' focusable='false' size={24} />
         <span className='sr-only'>LinkedIn</span>
-      </LinkComponent>
-      <LinkComponent
+      </Link>
+      <Link
         href='https://wa.me/5551998913374'
         title='WhatsApp'
+        aria-label='WhatsApp'
         target='_blank'
         className={cn(
           buttonVariants({ size: 'icon', variant: 'outline' }),
@@ -46,7 +49,7 @@ const SocialLinks = ({ className }: SocialLinksProps) => {
       >
         <Icon.whatsapp aria-hidden='true' focusable='false' size={24} />
         <span className='sr-only'>WhatsApp</span>
-      </LinkComponent>
+      </Link>
     </>
   )
 }

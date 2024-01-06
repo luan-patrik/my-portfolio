@@ -1,8 +1,8 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LinkComponent } from '../ui/link'
 
 interface NavigationLinks {
   onClose?: () => void
@@ -15,7 +15,7 @@ const NavigationLinks = ({ onClose }: NavigationLinks) => {
     <nav className='hidden sm:block'>
       <ul className='relative m-0 inline-flex gap-2 p-0'>
         <li>
-          <LinkComponent
+          <Link
             className={cn(
               'relative inline-block cursor-pointer rounded-md p-2 text-xs font-medium uppercase tracking-widest text-muted-foreground transition-colors after:absolute after:bottom-2 after:left-0 after:right-0 after:mx-auto after:h-[1.8px] after:w-[1.8px] after:rounded-full after:bg-muted-foreground after:transition-all hover:bg-accent',
               pathname === '/' &&
@@ -23,13 +23,13 @@ const NavigationLinks = ({ onClose }: NavigationLinks) => {
             )}
             onClick={onClose}
             href='/'
-            title='Início'
+            aria-label='Início'
           >
             Início
-          </LinkComponent>
+          </Link>
         </li>
         <li>
-          <LinkComponent
+          <Link
             className={cn(
               'relative inline-block cursor-pointer rounded-md p-2 text-xs font-medium uppercase tracking-widest text-muted-foreground transition-colors after:absolute after:bottom-2 after:left-0 after:right-0 after:mx-auto after:h-[1.8px] after:w-[1.8px] after:rounded-full after:bg-muted-foreground after:transition-all hover:bg-accent',
               pathname === '/sobre' &&
@@ -37,13 +37,13 @@ const NavigationLinks = ({ onClose }: NavigationLinks) => {
             )}
             onClick={onClose}
             href='/sobre'
-            title='Sobre'
+            aria-label='Sobre'
           >
             Sobre
-          </LinkComponent>
+          </Link>
         </li>
         <li>
-          <LinkComponent
+          <Link
             className={cn(
               'relative inline-block cursor-pointer rounded-md p-2 text-xs font-medium uppercase tracking-widest text-muted-foreground transition-colors after:absolute after:bottom-2 after:left-0 after:right-0 after:mx-auto after:h-[1.8px] after:w-[1.8px] after:rounded-full after:bg-muted-foreground after:transition-all hover:bg-accent',
               pathname === '/projetos' &&
@@ -51,13 +51,13 @@ const NavigationLinks = ({ onClose }: NavigationLinks) => {
             )}
             onClick={onClose}
             href='/projetos'
-            title='Projetos'
+            aria-label='Projetos'
           >
             Projetos
-          </LinkComponent>
+          </Link>
         </li>
         <li>
-          <LinkComponent
+          <Link
             className={cn(
               'relative inline-block cursor-pointer rounded-md p-2 text-xs font-medium uppercase tracking-widest text-muted-foreground transition-colors after:absolute after:bottom-2 after:left-0 after:right-0 after:mx-auto after:h-[1.8px] after:w-[1.8px] after:rounded-full after:bg-muted-foreground after:transition-all hover:bg-accent',
               pathname === '/contato' &&
@@ -65,10 +65,10 @@ const NavigationLinks = ({ onClose }: NavigationLinks) => {
             )}
             onClick={onClose}
             href='/contato'
-            title='Contato'
+            aria-label='Contato'
           >
             Contato
-          </LinkComponent>
+          </Link>
         </li>
       </ul>
     </nav>

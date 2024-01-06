@@ -10,6 +10,7 @@ import {
   PhoneIcon,
   RocketIcon,
 } from 'lucide-react'
+import Link from 'next/link'
 import { useState } from 'react'
 import { Icon } from '../Icon'
 import { Button } from '../ui/button'
@@ -21,7 +22,6 @@ import {
   CommandList,
   CommandSeparator,
 } from '../ui/command'
-import { LinkComponent } from '../ui/link'
 
 const MobileNavbar = () => {
   const [open, setOpen] = useState<boolean>(false)
@@ -36,18 +36,25 @@ const MobileNavbar = () => {
 
   return (
     <div className='block sm:hidden'>
-      <Button variant='ghost' className='h-auto p-2' onClick={openDialogMenu}>
+      <Button
+        variant='ghost'
+        className='h-auto p-2'
+        title='Abrir menu'
+        aria-label='Abrir menu'
+        onClick={openDialogMenu}
+      >
         <CommandIcon
           className='h-[1.2rem] w-[1.2rem]'
           aria-hidden='true'
           focusable='false'
         />
+        <span className='sr-only'>Abrir menu</span>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandList>
           <CommandEmpty>Nenhum resultado encontrado.</CommandEmpty>
           <CommandGroup heading='Navegue'>
-            <LinkComponent href='/' onClick={onClose}>
+            <Link href='/' onClick={onClose} aria-label='Início'>
               <CommandItem className='p-2'>
                 <HomeIcon
                   className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
@@ -56,8 +63,8 @@ const MobileNavbar = () => {
                 />
                 Início
               </CommandItem>
-            </LinkComponent>
-            <LinkComponent href='/sobre' onClick={onClose}>
+            </Link>
+            <Link href='/sobre' onClick={onClose} aria-label='Sobre'>
               <CommandItem>
                 <MessageSquareIcon
                   className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
@@ -66,8 +73,8 @@ const MobileNavbar = () => {
                 />
                 Sobre
               </CommandItem>
-            </LinkComponent>
-            <LinkComponent href='/projetos' onClick={onClose}>
+            </Link>
+            <Link href='/projetos' onClick={onClose} aria-label='Projetos'>
               <CommandItem>
                 <RocketIcon
                   className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
@@ -76,8 +83,8 @@ const MobileNavbar = () => {
                 />
                 Projetos
               </CommandItem>
-            </LinkComponent>
-            <LinkComponent href='/contato' onClick={onClose}>
+            </Link>
+            <Link href='/contato' onClick={onClose} aria-label='Contato'>
               <CommandItem>
                 <PhoneIcon
                   className='pointer-events-none mr-2 h-[1.2rem] w-[1.2rem]'
@@ -86,14 +93,15 @@ const MobileNavbar = () => {
                 />
                 Contato
               </CommandItem>
-            </LinkComponent>
+            </Link>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading='Entre em contato'>
-            <LinkComponent
+            <Link
               href='mailto:contato.luanpatrik@gmail.com'
               target='_blank'
               onClick={onClose}
+              aria-label='Email'
             >
               <CommandItem>
                 <MailIcon
@@ -103,11 +111,12 @@ const MobileNavbar = () => {
                 />
                 contato.luanpatrik@gmail.com
               </CommandItem>
-            </LinkComponent>
-            <LinkComponent
+            </Link>
+            <Link
               href='https://wa.me/5551998913374'
               target='_blank'
               onClick={onClose}
+              aria-label='WhatsApp'
             >
               <CommandItem>
                 <Icon.whatsapp
@@ -117,11 +126,12 @@ const MobileNavbar = () => {
                 />
                 {'(51) 9 9891-3374'}
               </CommandItem>
-            </LinkComponent>
-            <LinkComponent
+            </Link>
+            <Link
               href='https://github.com/Luan-Patrik'
               target='_blank'
               onClick={onClose}
+              aria-label='GitHub'
             >
               <CommandItem>
                 <GithubIcon
@@ -131,11 +141,12 @@ const MobileNavbar = () => {
                 />
                 github.com/luan-patrik
               </CommandItem>
-            </LinkComponent>
-            <LinkComponent
+            </Link>
+            <Link
               href='https://www.linkedin.com/in/luanpatrik'
               target='_blank'
               onClick={onClose}
+              aria-label='LinkedIn'
             >
               <CommandItem>
                 <LinkedinIcon
@@ -145,7 +156,7 @@ const MobileNavbar = () => {
                 />
                 linkedin.com/in/luanpatrik
               </CommandItem>
-            </LinkComponent>
+            </Link>
           </CommandGroup>
         </CommandList>
       </CommandDialog>
