@@ -16,7 +16,12 @@ export const ChangeTheme = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' title='Mudar tema' className='z-50 h-auto p-2'>
+        <Button
+          variant='ghost'
+          title='Mudar tema'
+          aria-label='Mudar tema'
+          className='z-50 h-auto p-2'
+        >
           <Sun
             aria-hidden='true'
             focusable='false'
@@ -35,7 +40,7 @@ export const ChangeTheme = () => {
           onClick={() => {
             setTheme('light')
           }}
-          title='Claro'
+          aria-label='Claro'
         >
           Claro
         </DropdownMenuItem>
@@ -43,7 +48,7 @@ export const ChangeTheme = () => {
           onClick={() => {
             setTheme('dark')
           }}
-          title='Escuro'
+          aria-label='Escuro'
         >
           Escuro
         </DropdownMenuItem>
@@ -51,7 +56,7 @@ export const ChangeTheme = () => {
           onClick={() => {
             setTheme('system')
           }}
-          title='Sistema'
+          aria-aria-label='Sistema'
         >
           Sistema
         </DropdownMenuItem>

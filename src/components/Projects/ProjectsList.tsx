@@ -1,23 +1,26 @@
-import Project from '@/components/Projects/Project'
-import { projectsData } from '@/lib/data'
+'use client'
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselNext,
+  CarouselPrevious,
+} from '../ui/carousel'
+import Project from './Project'
 
 const ProjectsList = () => {
-  const projectList = projectsData()
-
   return (
-    <section className='container'>
-      <div className='flex min-h-[calc(100svh_-_92px)] flex-col justify-center gap-6'>
-        {projectList.map((project, i) => (
-          <Project
-            key={i}
-            title={project.title}
-            description={project.description}
-            website={project.website}
-            repository={project.repository}
-            img={project.img}
-          />
-        ))}
-      </div>
+    <section className='container flex min-h-[calc(100svh_-_92px)] items-center justify-center '>
+      <Carousel
+        className='mx-auto w-full max-w-5xl pt-10 sm:px-10 sm:pt-0'
+        opts={{ loop: true }}
+      >
+        <CarouselContent>
+          <Project />
+        </CarouselContent>
+        <CarouselPrevious className='right-12 sm:left-0' />
+        <CarouselNext className='right-0' />
+      </Carousel>
     </section>
   )
 }

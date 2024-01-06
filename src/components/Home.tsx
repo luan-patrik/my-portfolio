@@ -19,10 +19,10 @@ const Home = () => {
               <h1 className='text-base font-normal md:text-xl'>
                 Oi, sou Luan Patrik 👋
               </h1>
-              <h2 className='text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl'>
-                <span>FRONT-END</span>
+              <h2 className='xs:text-3xl text-2xl font-extrabold sm:text-4xl md:text-5xl 2xl:text-7xl'>
+                DESENVOLVEDOR
                 <br />
-                <span>DEVELOPER</span>
+                FRONT-END
               </h2>
               <p className='lg:3/4 max-w-2xl text-base font-normal leading-6 md:text-xl'>
                 Estou estudando há {years} anos. Durante essa jornada, criei

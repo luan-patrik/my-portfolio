@@ -101,6 +101,7 @@ const FormContact = () => {
         <Button
           type='submit'
           variant='outline'
+          aria-label='Enviar'
           className='w-full'
           disabled={isLoading}
         >

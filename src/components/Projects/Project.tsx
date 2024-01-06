@@ -1,78 +1,86 @@
-import { cn } from '@/lib/utils'
-import { ExternalLink, Github } from 'lucide-react'
+'use client'
+
+import { projectsData } from '@/lib/data'
+import { ExternalLinkIcon, GithubIcon } from 'lucide-react'
 import Image from 'next/image'
-import fs from 'node:fs/promises'
-import path from 'node:path'
-import { getPlaiceholder } from 'plaiceholder'
-import { ReactNode } from 'react'
-import { buttonVariants } from '../ui/button'
-import { LinkComponent } from '../ui/link'
+import Link from 'next/link'
+import { useState } from 'react'
+import { Button } from '../ui/button'
+import { CarouselItem } from '../ui/carousel'
+import ModalImageVisualization from './ModalImageVisualization'
 
-interface RepositoryProps {
-  title: string
-  description: ReactNode
-  img: string
-  website: string
-  repository: string
-}
-
-const Project = async ({
-  title,
-  img,
-  website,
-  repository,
-  description,
-}: RepositoryProps) => {
-  const buffer = await fs.readFile(path.join('./public', img))
-
-  const { base64 } = await getPlaiceholder(buffer)
+const Project = () => {
+  const data = projectsData()
+  const [openImageId, setOpenImageId] = useState<number | null>(null)
 
   return (
-    <div className='group relative mx-auto w-full max-w-5xl overflow-hidden rounded-md border border-foreground bg-muted'>
-      <div className='flex h-full flex-col gap-2 px-5 py-4 sm:max-w-[50%] sm:py-10 sm:pr-2 sm:pt-10'>
-        <h1 className='text-2xl font-semibold'>{title}</h1>
-        <p className='hidden text-ellipsis text-sm leading-relaxed text-foreground/90 sm:block md:text-base'>
-          {description}
-        </p>
-        <Image
-          src={img}
-          quality={100}
-          width={452}
-          height={255}
-          placeholder='blur'
-          blurDataURL={base64}
-          alt={`Imagem de ${title}`}
-          className='w-full rounded-md border border-ring shadow-md transition sm:absolute sm:-right-28 sm:bottom-0 sm:w-96 sm:rounded-b-none sm:group-hover:translate-x-3 sm:group-hover:translate-y-3 sm:group-hover:-rotate-2 sm:group-hover:scale-[1.04] md:w-[28.25rem]'
-          style={{
-            objectFit: 'cover',
-          }}
-        />
-        <div className='flex flex-col justify-between gap-2 text-sm min-[380px]:flex-row'>
-          <LinkComponent
-            href={website}
-            target='_blank'
-            className={cn(
-              buttonVariants({ variant: 'outline' }),
-              'flex w-full items-center justify-center gap-2 border-ring',
-            )}
-          >
-            Site <ExternalLink aria-hidden='true' focusable='false' size={14} />
-          </LinkComponent>
-
-          <LinkComponent
-            href={repository}
-            target='_blank'
-            className={cn(
-              buttonVariants({ variant: 'outline' }),
-              'flex w-full items-center justify-center gap-2 border-ring',
-            )}
-          >
-            Repositório{' '}
-            <Github aria-hidden='true' focusable='false' size={14} />
-          </LinkComponent>
-        </div>
-      </div>
-    </div>
+    <>
+      {data.map((item) => (
+        <CarouselItem key={item.id}>
+          <div className='flex h-full w-full flex-col gap-4 overflow-hidden rounded-md border bg-accent p-2 md:min-h-[24rem] md:flex-row'>
+            <div className='flex flex-1 flex-col justify-between gap-4'>
+              <h2 className='text-xl font-bold uppercase'>{item.title}</h2>
+              <p className='leading-relaxed'>{item.description}</p>
+              <div className='flex flex-col gap-2 sm:flex-row'>
+                <Button
+                  asChild
+                  variant='outline'
+                  size='sm'
+                  aria-label='Ver site'
+                  className='flex w-full items-center gap-2 text-sm font-medium'
+                >
+                  <Link href={item.website}>
+                    Site
+                    <ExternalLinkIcon
+                      aria-hidden='true'
+                      focusable='false'
+                      className='h-[1rem] w-[1rem]'
+                    />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant='outline'
+                  size='sm'
+                  aria-label='Ver repositório'
+                  className='flex w-full items-center gap-2 text-sm font-medium'
+                >
+                  <Link href={item.repository}>
+                    Repositório
+                    <GithubIcon
+                      aria-hidden='true'
+                      focusable='false'
+                      className='h-[1rem] w-[1rem]'
+                    />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className='relative md:flex-1'>
+              <Image
+                src={item.img}
+                onClick={() => setOpenImageId(item.id)}
+                alt={item.title}
+                priority
+                width={1920}
+                height={1080}
+                className='-bottom-2 -right-2 cursor-zoom-in rounded-md object-contain md:absolute md:rounded-b-none md:rounded-tl-md md:rounded-tr-none'
+              />
+            </div>
+          </div>
+          {item.id === openImageId ? (
+            <ModalImageVisualization
+              key={item.id}
+              id={item.id}
+              open={openImageId !== null}
+              openDialogMenu={() => setOpenImageId(null)}
+              src={item.img}
+              title={item.title}
+            />
+          ) : null}
+        </CarouselItem>
+      ))}
+    </>
   )
 }
 
