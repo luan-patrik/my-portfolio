@@ -8,6 +8,8 @@ const Header = () => {
       <Link
         href='/'
         className='hidden rounded-md p-2 font-bold uppercase transition-colors hover:bg-accent sm:block'
+        title='Voltar para o início'
+        aria-label='Início'
       >
         Luan Patrik
       </Link>
