@@ -41,7 +41,7 @@ export const projectsData = () => {
       title: 'Amor Animal',
       description:
         'Site desenvolvido com Next.js para divulgar animais perdidos e abandonados, e para sensibilizar as pessoas sobre a importância da adoção. O site apresenta os animais que estão para adoção e precisando do seu carinho. A interface é intuitiva e fácil de usar, e a experiência foi otimizada para dispositivos móveis, garantindo acesso de qualquer dispositivo.',
-      website: 'https:/amor-animal.vercel.app',
+      website: 'https://amor-animal.vercel.app',
       repository: 'https://github.com/Luan-Patrik/amor-animal',
       img: '/assets/projects/amor-animal.webp',
     },
