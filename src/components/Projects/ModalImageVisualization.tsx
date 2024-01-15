@@ -4,7 +4,7 @@ import { Dialog, DialogContent } from '../ui/dialog'
 interface ModalImageVisualizationProps {
   open: boolean
   openDialogMenu: () => void
-  id: number
+  id: string
   src: string
   title: string
 }
@@ -17,15 +17,15 @@ const ModalImageVisualization = ({
   title,
 }: ModalImageVisualizationProps) => {
   return (
-    <div className='container'>
+    <div className='= container fixed'>
       <Dialog modal open={open} onOpenChange={openDialogMenu}>
-        <DialogContent className='max-w-7xl rounded-md p-0 sm:p-2'>
+        <DialogContent className='max-w-7xl rounded-md p-0'>
           <Image
             key={id}
             src={src}
-            quality={100}
-            priority
             alt={title}
+            priority
+            quality={100}
             width={1920}
             height={1080}
             className='rounded-md object-contain'
