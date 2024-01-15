@@ -56,7 +56,7 @@ export const ChangeTheme = () => {
           onClick={() => {
             setTheme('system')
           }}
-          aria-aria-label='Sistema'
+          aria-label='Sistema'
         >
           Sistema
         </DropdownMenuItem>
