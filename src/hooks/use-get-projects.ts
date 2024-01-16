@@ -1,5 +1,3 @@
-'use server'
-
 import { ExtendProjects } from '@/types/Projects'
 
 export const useGetProjects = async () => {
