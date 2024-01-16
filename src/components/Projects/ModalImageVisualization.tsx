@@ -17,7 +17,7 @@ const ModalImageVisualization = ({
   title,
 }: ModalImageVisualizationProps) => {
   return (
-    <div className='= container fixed'>
+    <div className='container fixed'>
       <Dialog modal open={open} onOpenChange={openDialogMenu}>
         <DialogContent className='max-w-7xl rounded-md p-0'>
           <Image
