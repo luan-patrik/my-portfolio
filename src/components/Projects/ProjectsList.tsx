@@ -1,6 +1,6 @@
 import { useGetProjects } from '@/hooks/use-get-projects'
 import { revalidateTag } from 'next/cache'
-import Project from './projects/Project'
+import Project from './Project'
 
 const ProjectsList = async () => {
   const posts = await useGetProjects()
