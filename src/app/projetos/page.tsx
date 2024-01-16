@@ -9,6 +9,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function CurriculumPage() {
+export default function ProjectsPage() {
   return <ProjectsList />
 }

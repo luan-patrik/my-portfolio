@@ -5,7 +5,7 @@ const About = () => {
   const startDate = new Date(2005, 0, 26)
   const currentDate = new Date()
   const millisecondsDiff = currentDate.getTime() - startDate.getTime()
-  const daysDiff = millisecondsDiff / (1000 * 60 * 60 * 24) + 1
+  const daysDiff = millisecondsDiff / (1000 * 60 * 60 * 24)
   const ageInYears = Math.floor(daysDiff / 365.25)
 
   return (
