@@ -19,8 +19,8 @@ const FormContact = () => {
   const form = useForm<FormContactRequest>({
     resolver: zodResolver(FormContactValidator),
     defaultValues: {
-      author: 'Luan',
-      email: 'Luan@gmail.com',
+      author: '',
+      email: '',
       description: '',
     },
   })
