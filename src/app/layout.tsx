@@ -1,5 +1,6 @@
 import ThemeProvider from '@/components/ThemeProvider'
 import { Header } from '@/components/navbar'
+import { Toaster } from '@/components/ui/sonner'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import { type ReactNode } from 'react'
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           <Header />
           <main className='py-4'>{children}</main>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
