@@ -5,11 +5,12 @@ import {
   FormContactValidator,
 } from '@/lib/FormContactValidator'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Loader2Icon } from 'lucide-react'
+import { CheckCheckIcon, Loader2Icon, XCircleIcon } from 'lucide-react'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import { Button } from './ui/button'
-import { Form, FormField, FormItem, FormMessage } from './ui/form'
+import { Form, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 
@@ -18,9 +19,9 @@ const FormContact = () => {
   const form = useForm<FormContactRequest>({
     resolver: zodResolver(FormContactValidator),
     defaultValues: {
-      author: '',
+      author: 'Luan',
+      email: 'Luan@gmail.com',
       description: '',
-      email: '',
     },
   })
 
@@ -51,10 +52,36 @@ const FormContact = () => {
 
     if (!res.ok) {
       setIsLoading(false)
+      toast.error('Falha ao enviar mensagem.', {
+        duration: 5000,
+        cancel: {
+          label: 'Fechar',
+        },
+        icon: (
+          <XCircleIcon
+            aria-hidden='true'
+            focusable='false'
+            className='h-4 w-4 text-destructive'
+          />
+        ),
+      })
       throw new Error('Algo deu errado. Tente novamente mais tarde.')
     }
 
     form.reset()
+    toast.success('Mensagem enviada com sucesso.', {
+      duration: 5000,
+      cancel: {
+        label: 'Fechar',
+      },
+      icon: (
+        <CheckCheckIcon
+          aria-hidden='true'
+          focusable='false'
+          className='h-4 w-4'
+        />
+      ),
+    })
     setIsLoading(false)
   }
 
@@ -69,17 +96,8 @@ const FormContact = () => {
           name='author'
           render={({ field }) => (
             <FormItem>
+              <FormLabel>Nome</FormLabel>
               <Input type='text' placeholder='Luan Patrik' {...field} />
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name='description'
-          render={({ field }) => (
-            <FormItem>
-              <Textarea placeholder='Me conte um pouco sobre...' {...field} />
               <FormMessage />
             </FormItem>
           )}
@@ -89,11 +107,23 @@ const FormContact = () => {
           name='email'
           render={({ field }) => (
             <FormItem>
+              <FormLabel>Email</FormLabel>
               <Input
-                type='email'
+                type='text'
                 placeholder='luanpatrik@example.com'
                 {...field}
               />
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='description'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Descrição</FormLabel>
+              <Textarea placeholder='Me conte um pouco sobre...' {...field} />
               <FormMessage />
             </FormItem>
           )}
