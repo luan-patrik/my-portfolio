@@ -83,7 +83,7 @@ const Project = ({
             priority
             width={1920}
             height={1080}
-            className='cursor-zoom-in rounded-md border object-contain'
+            className='aspect-video cursor-zoom-in rounded-md border object-contain'
           />
         </div>
       </div>

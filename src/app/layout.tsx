@@ -14,6 +14,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://luanpatrik.com'),
+  robots: { index: true, follow: true },
   title: 'Portfólio | Luan Patrik - Desenvolvedor Front-End.',
   description:
     'Olá! Sou Luan Patrik, desenvolvedor web front-end apaixonado por programação.',
