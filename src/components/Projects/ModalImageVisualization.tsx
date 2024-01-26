@@ -28,7 +28,7 @@ const ModalImageVisualization = ({
             quality={100}
             width={1920}
             height={1080}
-            className='rounded-md object-contain'
+            className='aspect-video rounded-md object-contain'
           />
         </DialogContent>
       </Dialog>
