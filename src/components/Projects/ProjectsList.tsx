@@ -1,19 +1,26 @@
 import { useGetProjects } from '@/hooks/use-get-projects'
+import { cn } from '@/lib/utils'
 import { revalidateTag } from 'next/cache'
-import Project from './Project'
+import { Card, CardTitle, HoverEffect } from '../ui/card-hover-effect'
 
-const ProjectsList = async () => {
+export const ProjectsList = async () => {
   const posts = await useGetProjects()
 
   revalidateTag('projects')
 
   return (
-    <section className='container flex min-h-[calc(100svh_-_92px)] items-center justify-center'>
-      <div className='grid max-w-5xl grid-cols-1 place-content-center gap-4 md:grid-cols-2'>
-        {posts && posts.map((post) => <Project key={post.id} {...post} />)}
+    <Card className='flex h-auto'>
+      <CardTitle>Projetos</CardTitle>
+      <div
+        className={cn(
+          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2',
+        )}
+      >
+        {posts &&
+          posts.map((post) => (
+            <HoverEffect key={post.id} length={posts.length} items={[post]} />
+          ))}
       </div>
-    </section>
+    </Card>
   )
 }
-
-export default ProjectsList
