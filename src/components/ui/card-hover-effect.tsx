@@ -27,6 +27,7 @@ export const HoverEffect = ({
 
   const handleOpenImage = () => {
     setOpen((opened) => !opened)
+    setHoveredIndex(null)
   }
 
   return (
@@ -126,7 +127,7 @@ export const Card = ({
         className,
       )}
     >
-      <div className='relative z-50 h-full '>
+      <div className='relative z-50 h-full w-full'>
         <div className='flex h-full flex-col gap-4 p-4'>{children}</div>
       </div>
     </div>
@@ -142,7 +143,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        'w-full text-xl font-bold tracking-wide text-foreground',
+        'w-full text-2xl font-bold tracking-wide text-foreground',
         className,
       )}
     >

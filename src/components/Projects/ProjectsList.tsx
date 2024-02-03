@@ -1,7 +1,7 @@
 import { useGetProjects } from '@/hooks/use-get-projects'
 import { cn } from '@/lib/utils'
 import { revalidateTag } from 'next/cache'
-import { Card, CardTitle, HoverEffect } from '../ui/card-hover-effect'
+import { CardTitle, HoverEffect } from '../ui/card-hover-effect'
 
 export const ProjectsList = async () => {
   const posts = await useGetProjects()
@@ -9,7 +9,7 @@ export const ProjectsList = async () => {
   revalidateTag('projects')
 
   return (
-    <Card className='flex h-auto'>
+    <div className='flex h-auto flex-col'>
       <CardTitle>Projetos</CardTitle>
       <div
         className={cn(
@@ -21,6 +21,6 @@ export const ProjectsList = async () => {
             <HoverEffect key={post.id} length={posts.length} items={[post]} />
           ))}
       </div>
-    </Card>
+    </div>
   )
 }

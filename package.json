@@ -4,7 +4,7 @@
   "private": true,
   "author": "Luan Patrik",
   "license": "ISC",
-  "description": "This is a [my portfolio](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "description": "This is a [my portfolio](https://luanpatrik.com) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
