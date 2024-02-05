@@ -1,5 +1,4 @@
-import ThemeProvider from '@/components/ThemeProvider'
-import { Header } from '@/components/navbar'
+import { ThemeProvider } from '@/components'
 import { Toaster } from '@/components/ui/sonner'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
@@ -62,8 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           enableColorScheme
           disableTransitionOnChange
         >
-          <Header />
-          <main className='py-4'>{children}</main>
+          <main>{children}</main>
           <Toaster />
         </ThemeProvider>
       </body>
