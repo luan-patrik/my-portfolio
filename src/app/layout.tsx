@@ -1,13 +1,12 @@
 import { ThemeProvider } from '@/components'
 import { Toaster } from '@/components/ui/sonner'
 import type { Metadata } from 'next'
-import { Nunito } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { type ReactNode } from 'react'
 import './globals.css'
 
-const nunito = Nunito({
+const inter = Inter({
   subsets: ['latin'],
-  style: 'normal',
   preload: true,
 })
 
@@ -52,8 +51,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='pt-BR' className={nunito.className} suppressHydrationWarning>
-      <body className='bg-background text-foreground'>
+    <html lang='pt-BR' className={inter.className} suppressHydrationWarning>
+      <body className='bg-background text-foreground antialiased'>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
