@@ -61,7 +61,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <div className='flex-1'>
-              <CardTitle className='inline-flex items-center justify-between uppercase'>
+              <CardTitle className='flex flex-col text-lg uppercase sm:flex-row sm:items-center sm:justify-between'>
                 {item.name}
                 <Button
                   onClick={handleOpenImage}
@@ -123,7 +123,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        'relative z-50 h-full w-full overflow-hidden rounded-md border bg-background p-4 group-hover:border-muted',
+        'relative z-50 h-full w-full overflow-hidden rounded-md border bg-background group-hover:border-muted',
         className,
       )}
     >

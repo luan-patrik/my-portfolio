@@ -10,7 +10,7 @@ const BentoGrid = forwardRef<HTMLDivElement, BentoGridProps>(
     return (
       <div
         className={cn(
-          'mx-auto grid max-w-7xl auto-rows-[minmax(14rem,_auto)] grid-cols-1 gap-4 md:grid-cols-2',
+          'mx-auto grid max-w-7xl auto-rows-[minmax(8rem,_auto)] gap-10 py-4 grid-cols-4',
           className,
         )}
         {...props}
@@ -29,7 +29,7 @@ const BentoGridContent = forwardRef<HTMLElement, BentoGridContentProps>(
     return (
       <section
         className={cn(
-          'row-span-1 flex flex-col justify-between space-y-4 rounded-xl border bg-background p-4 shadow-input transition duration-200 hover:shadow-xl dark:shadow-none',
+          'row-span-1 flex flex-col gap-4 rounded-2xl border bg-background p-4 shadow-input transition duration-200 hover:shadow-md dark:shadow-none',
           className,
         )}
         ref={ref}
@@ -65,7 +65,11 @@ const BentoGridDescription = forwardRef<
   BentoGridDescriptionProps
 >(({ className, ...props }, ref) => {
   return (
-    <p className={cn('text-sm font-normal', className)} ref={ref} {...props} />
+    <p
+      className={cn('text-sm font-normal leading-relaxed', className)}
+      ref={ref}
+      {...props}
+    />
   )
 })
 
