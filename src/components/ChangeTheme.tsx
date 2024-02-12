@@ -17,22 +17,22 @@ export const ChangeTheme = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant='ghost'
+          variant='outline'
           title='Mudar tema'
           aria-label='Mudar tema'
-          className='z-50 h-auto p-2'
+          className='h-auto w-full p-2'
         >
           <Sun
             aria-hidden='true'
             focusable='false'
-            className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
+            className='block size-4 dark:hidden'
           />
           <Moon
             aria-hidden='true'
             focusable='false'
-            className='absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100'
+            className='hidden size-4 dark:block'
           />
-          <span className='sr-only'>Mudar tema</span>
+          <span className='ml-2'>Trocar tema</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

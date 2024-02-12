@@ -1,11 +1,13 @@
 'use client'
 
 import { BentoGridContent, BentoGridDescription } from './ui/bento-grid'
+import { CardTitle } from './ui/card-hover-effect'
 
 export const About = () => {
   return (
-    <BentoGridContent>
-      <BentoGridDescription className='col-span-1'>
+    <BentoGridContent className='col-span-4'>
+      <CardTitle>Sobre</CardTitle>
+      <BentoGridDescription>
         <strong>“</strong>Meu nome é Luan Patrik, tenho 19 anos. Minha jornada
         na programação começou quando iniciei na criação de servidores de SAMP
         usando a linguagem <strong>PAWN</strong>. Desde então me apaixonei pela
