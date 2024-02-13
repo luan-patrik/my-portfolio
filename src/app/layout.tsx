@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@/components'
+import { GridBackground } from '@/components/ui/grid-background'
 import { Toaster } from '@/components/ui/sonner'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -60,7 +61,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           enableColorScheme
           disableTransitionOnChange
         >
-          <main>{children}</main>
+          <main>
+            <GridBackground />
+            {children}
+          </main>
           <Toaster />
         </ThemeProvider>
       </body>
