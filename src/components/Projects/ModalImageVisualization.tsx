@@ -9,7 +9,7 @@ interface ModalImageVisualizationProps {
   title: string
 }
 
-const ModalImageVisualization = ({
+export const ModalImageVisualization = ({
   open,
   openDialogMenu,
   id,
@@ -17,7 +17,7 @@ const ModalImageVisualization = ({
   title,
 }: ModalImageVisualizationProps) => {
   return (
-    <div className='container fixed'>
+    <div className='fixed'>
       <Dialog modal open={open} onOpenChange={openDialogMenu}>
         <DialogContent className='max-w-7xl rounded-md p-0'>
           <Image
@@ -35,5 +35,3 @@ const ModalImageVisualization = ({
     </div>
   )
 }
-
-export default ModalImageVisualization

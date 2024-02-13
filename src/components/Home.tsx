@@ -1,62 +1,44 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ChangeTheme } from './ChangeTheme'
+import { Icon } from './Icon'
 import { buttonVariants } from './ui/button'
 
-const Home = () => {
-  const startDate = new Date(2021, 0, 1)
-  const currentDate = new Date()
-  const millisecondsDiff = currentDate.getTime() - startDate.getTime()
-  const daysDiff = millisecondsDiff / (1000 * 60 * 60 * 24) + 1
-  const years = Math.floor(daysDiff / 365.25)
-
+export const Home = () => {
   return (
-    <section className='container'>
-      <div className='flex min-h-[calc(100svh_-_92px)] items-center justify-center'>
-        <div className='flex h-full flex-col items-center gap-4 lg:flex-row lg:gap-6'>
-          <div className='flex flex-col gap-4 lg:w-fit lg:gap-2'>
-            <div>
-              <h1 className='text-base font-normal md:text-xl'>
-                Oi, sou Luan Patrik 👋
-              </h1>
-              <h2 className='xs:text-3xl text-2xl font-extrabold sm:text-4xl md:text-5xl 2xl:text-7xl'>
-                DESENVOLVEDOR
-                <br />
-                FRONT-END
-              </h2>
-              <p className='lg:3/4 max-w-2xl text-base font-normal leading-6 md:text-xl'>
-                Estou estudando há {years} anos. Durante essa jornada, criei
-                projetos desafiadores que me proporcionaram grande aprendizado e
-                desenvolvimento de minhas habilidades e conhecimentos em{' '}
-                <strong>HTML</strong>, <strong>JavaScript</strong>,{' '}
-                <strong>CSS</strong>, <strong>Tailwind</strong>,{' '}
-                <strong>React</strong>, <strong>Next.js</strong>,{' '}
-                <strong>Prisma</strong>, <strong>MongoDB</strong> e{' '}
-                <strong>APIs</strong>.
-              </p>
-            </div>
-            <Link
-              className={cn(buttonVariants({ variant: 'outline' }), 'w-full')}
-              href='https://docs.google.com/document/d/19lMJ5p95hjIOqwnNSe9lVGC9SEXp6yeQwTVfvQeMzEk/edit'
-              target='_blank'
-            >
-              Baixar CV
-            </Link>
-          </div>
-          <div>
-            <Image
-              src='/assets/photo.svg'
-              className='h-auto w-auto'
-              priority
-              width={700}
-              height={300}
-              alt='Foto'
-            />
-          </div>
+    <section className='flex flex-1 flex-col items-center pt-4 sm:block sm:items-start lg:sticky lg:top-16 lg:h-full lg:w-full lg:min-w-96 lg:py-4'>
+      <Image
+        src={'/assets/photo.webp'}
+        width={180}
+        height={180}
+        alt='Avatar ilustrativo de Luan Patrik'
+        quality={100}
+        priority
+        className='select-none rounded-full border-2 object-cover shadow-lg'
+      />
+      <div className='flex flex-col items-center gap-4 text-center sm:items-start sm:text-start'>
+        <h1 className='text-2xl font-bold xs:text-4xl'>Luan Patrik</h1>
+        <h2 className='text-base font-light xs:text-lg sm:text-xl'>
+          Desenvolvedor <span className='whitespace-nowrap'>Front-End</span>
+        </h2>
+        <p className='text-base font-light xs:text-lg sm:text-xl'>
+          Há 3 anos criando projetos desafiadores.
+        </p>
+        <p className='inline-flex items-center gap-2 text-base font-light xs:text-lg sm:text-xl'>
+          Brasil <Icon.flag className='size-6' />
+        </p>
+        <div className='flex w-full flex-col items-center gap-4 sm:flex-row'>
+          <Link
+            className={cn(buttonVariants({ variant: 'outline' }), 'w-full')}
+            href='https://docs.google.com/document/d/19lMJ5p95hjIOqwnNSe9lVGC9SEXp6yeQwTVfvQeMzEk/edit'
+            target='_blank'
+          >
+            Baixar CV
+          </Link>
+          <ChangeTheme />
         </div>
       </div>
     </section>
   )
 }
-
-export default Home

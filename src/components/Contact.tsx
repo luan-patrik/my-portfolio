@@ -1,25 +1,14 @@
-import FormContact from './FormContact'
-import { SocialCard } from './Social'
-import SocialLinks from './SocialLinks'
+import { FormContact } from './FormContact'
+import { BentoGridContent } from './ui/bento-grid'
+import { CardTitle } from './ui/card-hover-effect'
 
-const Contact = () => {
+export const Contact = () => {
   return (
-    <section className='overflow-x-hidden'>
-      <div className='container'>
-        <div className='flex min-h-[calc(100svh_-_92px)] flex-col items-center justify-center gap-4'>
-          <FormContact />
-          <div className='flex w-screen items-center justify-center gap-2 overflow-x-hidden'>
-            <hr className='h-[1px] w-screen bg-accent' />
-            <span className='uppercase'>OU</span>
-            <hr className='h-[1px] w-screen bg-accent' />
-          </div>
-          <SocialCard>
-            <SocialLinks />
-          </SocialCard>
-        </div>
+    <BentoGridContent className='col-span-4'>
+      <div className='flex flex-col items-center justify-center gap-4'>
+        <CardTitle>Contato</CardTitle>
+        <FormContact />
       </div>
-    </section>
+    </BentoGridContent>
   )
 }
-
-export default Contact

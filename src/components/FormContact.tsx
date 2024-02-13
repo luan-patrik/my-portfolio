@@ -14,7 +14,7 @@ import { Form, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 
-const FormContact = () => {
+export const FormContact = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const form = useForm<FormContactRequest>({
     resolver: zodResolver(FormContactValidator),
@@ -61,7 +61,7 @@ const FormContact = () => {
           <XCircleIcon
             aria-hidden='true'
             focusable='false'
-            className='h-4 w-4 text-destructive'
+            className='size-4 text-destructive'
           />
         ),
       })
@@ -78,7 +78,7 @@ const FormContact = () => {
         <CheckCheckIcon
           aria-hidden='true'
           focusable='false'
-          className='h-4 w-4'
+          className='size-4'
         />
       ),
     })
@@ -89,7 +89,7 @@ const FormContact = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='mx-auto w-full max-w-xl space-y-4'
+        className='w-full space-y-4'
       >
         <FormField
           control={form.control}
@@ -137,7 +137,7 @@ const FormContact = () => {
         >
           {isLoading ? (
             <Loader2Icon
-              className='h-[1.2rem] w-[1.2rem] animate-spin'
+              className='size-[1.2rem] animate-spin'
               aria-hidden='true'
               focusable='false'
             />
@@ -149,5 +149,3 @@ const FormContact = () => {
     </Form>
   )
 }
-
-export default FormContact
