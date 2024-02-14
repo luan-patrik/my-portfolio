@@ -38,6 +38,7 @@ export const SocialLinks = () => {
         links.map((link) => (
           <Link
             href={link.href}
+            target='_blank'
             className={cn(
               buttonVariants({ size: 'social', variant: 'social' }),
             )}
