@@ -84,12 +84,14 @@ export const HoverEffect = ({
             <CardFooter>
               <Link
                 href={item.website}
+                target='_blank'
                 className={cn(buttonVariants({ variant: 'outline' }), 'flex-1')}
               >
                 Site
               </Link>
               <Link
                 href={item.repository}
+                target='_blank'
                 className={cn(buttonVariants({ variant: 'outline' }), 'flex-1')}
               >
                 Repositório
